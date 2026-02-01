@@ -42,4 +42,7 @@ Airline "1" o-- "*" Flight
 Flight "1" o-- "*" Seat
 Passenger "1" -- "*" Reservation
 Seat "1" -- "0..1" Reservation
+
+Seat <|-- EconomySeat
+Seat <|-- BusinessSeat
 @enduml
