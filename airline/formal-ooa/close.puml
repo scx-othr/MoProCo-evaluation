@@ -1,0 +1,14 @@
+@startuml
+title Operation: Loan.close()
+
+start
+if (Loan already closed) then (yes)
+  :Reject operation;
+else (no)
+  :Remove association to Copy;
+  :Remove association to Member;
+  :Mark Loan as closed;
+endif
+
+stop
+@enduml

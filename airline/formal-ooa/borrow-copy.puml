@@ -1,0 +1,20 @@
+@startuml
+title Operation: Member.borrowCopy(c: Copy)
+
+start
+:Request borrow(c);
+
+if (c.status == Available) then (yes)
+  :Create Loan;
+  :loanDate = now;
+  :dueDate = now + loanPeriod;
+  :Associate Loan with Member;
+  :Associate Loan with Copy;
+  :c.status = OnLoan;
+  :Return Loan;
+else (no)
+  :Reject request;
+endif
+
+stop
+@enduml

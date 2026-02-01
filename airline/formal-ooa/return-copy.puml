@@ -1,0 +1,15 @@
+@startuml
+title Operation: Member.returnCopy(c: Copy)
+
+start
+:Find active Loan for c and Member;
+
+if (Loan exists) then (yes)
+  :Call Loan.close();
+  :c.status = Available;
+else (no)
+  :Reject return;
+endif
+
+stop
+@enduml

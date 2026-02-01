@@ -1,0 +1,14 @@
+@startuml
+title Operation: Library.registerMember(m: Member)
+
+start
+:Check memberId uniqueness;
+
+if (memberId exists) then (yes)
+  :Reject registration;
+else (no)
+  :Add m to Library.members;
+endif
+
+stop
+@enduml

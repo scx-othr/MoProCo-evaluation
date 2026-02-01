@@ -1,0 +1,15 @@
+@startuml
+title Operation: Library.addBook(b: Book)
+
+start
+:Check ISBN uniqueness;
+
+if (ISBN exists) then (yes)
+  :Reject book;
+else (no)
+  :Add b to Library.books;
+  :Ensure b has >= 1 Copy;
+endif
+
+stop
+@enduml
