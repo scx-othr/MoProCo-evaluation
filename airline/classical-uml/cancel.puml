@@ -1,0 +1,12 @@
+@startuml
+start
+if (Reservation active) then (yes)
+  :Seat.status = Available;
+  :Remove association to Passenger;
+  :Remove association to Seat;
+else (no)
+  :Ignore request;
+endif
+
+stop
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+start
+:Request reservation(s, p);
+
+if (s.status == Available) then (yes)
+  :Create Reservation;
+  :reservationDate = now;
+  :Associate Reservation with Passenger;
+  :Associate Reservation with Seat;
+  :s.status = Reserved;
+  :Return Reservation;
+else (no)
+  :Reject request;
+endif
+
+stop
+@enduml

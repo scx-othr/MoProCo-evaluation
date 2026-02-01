@@ -1,0 +1,21 @@
+@startuml
+start
+:Validate ownership;
+
+if (r.passenger != self) then (yes)
+  :Reject request;
+  stop
+endif
+
+if (newSeat.status == Available) then (yes)
+  :oldSeat = r.seat;
+  :oldSeat.status = Available;
+  :Detach Reservation from oldSeat;
+  :Attach Reservation to newSeat;
+  :newSeat.status = Reserved;
+else (no)
+  :Reject request;
+endif
+
+stop
+@enduml

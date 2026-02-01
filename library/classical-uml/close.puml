@@ -1,6 +1,4 @@
 @startuml
-title Operation: Loan.close()
-
 start
 if (Loan already closed) then (yes)
   :Reject operation;

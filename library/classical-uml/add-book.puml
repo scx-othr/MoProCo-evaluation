@@ -1,6 +1,4 @@
 @startuml
-title Operation: Library.addBook(b: Book)
-
 start
 :Check ISBN uniqueness;
 

@@ -24,6 +24,7 @@ class Copy {
 class Loan {
   +loanDate: Date
   +dueDate: Date
+  +closed: Boolean
   +close()
 }
 
@@ -32,6 +33,7 @@ enum CopyStatus {
   OnLoan
 }
 
+Library "1" o-- "*" Member
 Library "1" o-- "*" Book
 Book "1" o-- "*" Copy
 Member "1" -- "*" Loan

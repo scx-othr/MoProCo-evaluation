@@ -1,6 +1,4 @@
 @startuml
-title Operation: Member.borrowCopy(c: Copy)
-
 start
 :Request borrow(c);
 

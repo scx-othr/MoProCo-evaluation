@@ -1,0 +1,13 @@
+@startuml
+start
+:Check seatNumber uniqueness;
+
+if (seatNumber already exists) then (yes)
+  :Reject request;
+else (no)
+  :Assign s to Flight;
+  :s.status = Available;
+endif
+
+stop
+@enduml

@@ -1,0 +1,45 @@
+@startuml
+class Airline {
+  +name: String
+  +addFlight(f: Flight)
+}
+
+class Flight {
+  +flightNumber: String
+  +date: Date
+  +addSeat(s: Seat)
+  +reserveSeat(s: Seat, p: Passenger): Reservation
+}
+
+abstract class Seat {
+  +seatNumber: String
+  +status: SeatStatus
+}
+
+class EconomySeat
+
+class BusinessSeat {
+  +legroomInInches: Integer
+}
+
+class Passenger {
+  +passengerId: String
+  +name: String
+  +changeSeat(r: Reservation, newSeat: Seat)
+}
+
+class Reservation {
+  +reservationDate: Date
+  +cancel()
+}
+
+enum SeatStatus {
+  Available
+  Reserved
+}
+
+Airline "1" o-- "*" Flight
+Flight "1" o-- "*" Seat
+Passenger "1" -- "*" Reservation
+Seat "1" -- "0..1" Reservation
+@enduml

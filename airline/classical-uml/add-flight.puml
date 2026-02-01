@@ -1,0 +1,12 @@
+@startuml
+start
+:Check flightNumber uniqueness;
+
+if (flightNumber already exists) then (yes)
+  :Reject request;
+else (no)
+  :Add f to Airline.flights;
+endif
+
+stop
+@enduml
