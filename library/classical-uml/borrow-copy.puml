@@ -5,7 +5,7 @@ start
 if (c.status == Available) then (yes)
   :Create Loan;
   :loanDate = now;
-  :dueDate = now + loanPeriod;
+  :dueDate = now + 6 weeks;
   :Associate Loan with Member;
   :Associate Loan with Copy;
   :c.status = OnLoan;

@@ -1,9 +1,9 @@
 @startuml
 start
-:Find active Loan for c and Member;
+:Find active Loan for c and m;
 
-if (Loan exists) then (yes)
-  :Call Loan.close();
+if (Loan l exists) then (yes)
+  :Call l.close();
   :c.status = Available;
 else (no)
   :Reject return;
