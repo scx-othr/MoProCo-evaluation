@@ -73,7 +73,6 @@ public class Shop {
    */
   public Boolean registerCustomer(Customer c) {
     // generated start
-public Boolean registerCustomer(Customer c) {
     for (Customer existingCustomer : customers) {
         if (existingCustomer.getEmail().equals(c.getEmail())) {
             return false;
@@ -81,7 +80,6 @@ public Boolean registerCustomer(Customer c) {
     }
     this.addToCustomers(c);
     return true;
-}
 // generated end
     // insert your code here
 
@@ -92,14 +90,12 @@ public Boolean registerCustomer(Customer c) {
    */
   public Customer findCustomer(String email) {
     // generated start
-public Article findArticle(String ean) {
-    for (Article article : this.articles) {
-        if (article.getEan().equals(ean)) {
-            return article;
+    for (Customer customer : customers) {
+        if (customer.getEmail().equals(email)) {
+            return customer;
         }
     }
     return null;
-}
 // generated end
     // insert your code here
 
@@ -110,7 +106,11 @@ public Article findArticle(String ean) {
    */
   public Article findArticle(String ean) {
     // generated start
-    // generated end
+    return articles.stream()
+                   .filter(article -> article.getEan().equals(ean))
+                   .findFirst()
+                   .orElse(null);
+// generated end
     // insert your code here
 
   }

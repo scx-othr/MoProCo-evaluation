@@ -1,5 +1,6 @@
 package moprocoeval.airline;
 
+import moprocoeval.Date;
 
 public abstract class Seat {
   // generated properties
@@ -71,11 +72,21 @@ public abstract class Seat {
   /**
    * @prompt If the seat is not available, raise an exception. Otherwise create a new reservation
    *     and associate it with the current passenger and the provided seat. Set the reservation date
-   *     to now. Finally, set the seat's status to reserved and reserve the reservation.
+   *     to now. Finally, set the seat's status to reserved and return the reservation.
    */
   public Reservation reserve(Passenger p) {
     // generated start
-    // generated end
+if (this.status != SeatStatus.AVAILABLE) {
+  throw new IllegalArgumentException("Seat is not available");
+} else {
+  Reservation reservation = new Reservation();
+  reservation.setPassenger(p);
+  reservation.setSeat(this);
+  reservation.setReservationDate(new Date());
+  this.setStatus(SeatStatus.RESERVED);
+  return reservation;
+}
+// generated end
     // insert your code here
 
   }

@@ -86,12 +86,12 @@ this.addToMembers(m);
    * @prompt If a book with the specified ISBN already exists, raise an exception. Otherwise add the
    *     book to the library.
    */
-  public void addBook(Book b) {
+  public void addBook(Book book) {
     // generated start
-if (getBooks().stream().anyMatch(b -> b.getIsbn().equals(b))) {
+if (getBooks().stream().anyMatch(b -> b.getIsbn().equals(book.getIsbn()))) {
     throw new IllegalArgumentException("Book with the specified ISBN already exists");
 }
-addToBooks(b);
+addToBooks(book);
 // generated end
     // insert your code here
 

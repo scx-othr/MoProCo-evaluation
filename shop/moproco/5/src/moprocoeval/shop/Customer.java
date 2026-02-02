@@ -100,7 +100,6 @@ this.email = email;
    */
   public Boolean placeOrder(Order o) {
     // generated start
-public Boolean placeOrder(Order o) {
     boolean canPlaceOrder = true;
     for (OrderItem item : o.getItems()) {
         Article article = item.getArticle();
@@ -119,7 +118,6 @@ public Boolean placeOrder(Order o) {
     }
     this.addToOrders(o);
     return true;
-}
 // generated end
     // insert your code here
 

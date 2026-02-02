@@ -1,5 +1,6 @@
 package moprocoeval.library;
 
+import moprocoeval.Date;
 
 public class Loan {
   // generated properties

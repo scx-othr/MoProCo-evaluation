@@ -1,5 +1,7 @@
 package moprocoeval.library;
 
+import moprocoeval.Date;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -97,11 +99,6 @@ if (c.getStatus() != CopyStatus.AVAILABLE) {
 Loan loan = new Loan();
 loan.setMember(this);
 loan.setCopy(c);
-loan.setLoanDate(new Date());
-Calendar calendar = Calendar.getInstance();
-calendar.setTime(loan.getLoanDate());
-calendar.add(Calendar.WEEK_OF_YEAR, 6);
-loan.setDueDate(calendar.getTime());
 loan.setClosed(false);
 c.setStatus(CopyStatus.ON_LOAN);
 return loan;

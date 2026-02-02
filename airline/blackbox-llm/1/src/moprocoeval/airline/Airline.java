@@ -1,4 +1,4 @@
-ackage moprocoeval.airline;
+package moprocoeval.airline;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

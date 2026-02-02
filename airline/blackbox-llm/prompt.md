@@ -41,7 +41,7 @@ Otherwise add the seat to the flight and set the seat's status to available.
 If the seat is not available, raise an exception.
 Otherwise create a new reservation and associate it with the current passenger and the provided seat.
 Set the reservation date to now.
-Finally, set the seat's status to reserved and reserve the reservation.
+Finally, set the seat's status to reserved and return the reservation.
 
 ## Behavior: Change seat of a reservation
 

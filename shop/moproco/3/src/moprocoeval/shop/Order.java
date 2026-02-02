@@ -85,7 +85,6 @@ orderID = java.util.UUID.randomUUID().toString();
    */
   public Boolean addItem(OrderItem item) {
     // generated start
-public Boolean addItem(OrderItem item) {
     for (OrderItem existingItem : this.items) {
         if (existingItem.getArticle().getEan().equals(item.getArticle().getEan())) {
             existingItem.setQuantity(existingItem.getQuantity() + item.getQuantity());
@@ -94,7 +93,6 @@ public Boolean addItem(OrderItem item) {
     }
     this.addToItems(item);
     return true;
-}
 // generated end
     // insert your code here
 
@@ -105,7 +103,7 @@ public Boolean addItem(OrderItem item) {
    */
   public Double totalPrice() {
     // generated start
-Double totalPrice() { return this.getItems().stream().mapToDouble(item -> item.getArticle().getCurrentPrice() * item.getQuantity()).sum(); }
+ return this.getItems().stream().mapToDouble(item -> item.getArticle().getCurrentPrice() * item.getQuantity()).sum();
 // generated end
     // insert your code here
 

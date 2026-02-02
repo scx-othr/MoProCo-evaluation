@@ -1,5 +1,6 @@
 package moprocoeval.airline;
 
+import moprocoeval.Date;
 
 public class Reservation {
   // generated properties
@@ -66,7 +67,15 @@ public class Reservation {
    */
   public void changeSeat(Seat newSeat) {
     // generated start
-    // generated end
+if (newSeat.getStatus() != SeatStatus.AVAILABLE) {
+    throw new IllegalArgumentException("The selected seat is not available");
+}
+seat.setStatus(SeatStatus.AVAILABLE);
+setSeat(null);
+setPassenger(newSeat.getReservation().getPassenger());
+newSeat.setReservation(this);
+newSeat.setStatus(SeatStatus.RESERVED);
+// generated end
     // insert your code here
 
   }
@@ -77,7 +86,10 @@ public class Reservation {
    */
   public void cancel() {
     // generated start
-    // generated end
+this.seat.setStatus(SeatStatus.AVAILABLE);
+this.setSeat(null);
+this.setPassenger(null);
+// generated end
     // insert your code here
 
   }

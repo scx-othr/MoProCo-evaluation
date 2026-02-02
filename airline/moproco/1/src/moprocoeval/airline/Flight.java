@@ -1,5 +1,7 @@
 package moprocoeval.airline;
 
+import moprocoeval.Date;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -81,9 +83,16 @@ public class Flight {
    * @prompt If a seat with the given seat number already exists, raise an exception. Otherwise add
    *     the seat to the flight and set the seat's status to available.
    */
-  public void addSeat(Seat s) {
+  public void addSeat(Seat seat) {
     // generated start
-    // generated end
+for (Seat s : seats) {
+    if (s.getSeatNumber().equals(s.getSeatNumber())) {
+        throw new IllegalArgumentException("Seat with the specified number already exists");
+    }
+}
+seats.add(seat);
+seat.setStatus(SeatStatus.AVAILABLE);
+// generated end
     // insert your code here
 
   }

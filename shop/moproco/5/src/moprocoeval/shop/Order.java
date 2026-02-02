@@ -85,7 +85,6 @@ this.orderID = java.util.UUID.randomUUID().toString();
    */
   public Boolean addItem(OrderItem item) {
     // generated start
-public Boolean addItem(OrderItem item) {
     boolean canAdd = true;
     for (OrderItem existingItem : this.items) {
         if (existingItem.getArticle().getEan().equals(item.getArticle().getEan())) {
@@ -99,7 +98,6 @@ public Boolean addItem(OrderItem item) {
         this.addToItems(item);
     }
     return canAdd;
-}
 // generated end
     // insert your code here
 

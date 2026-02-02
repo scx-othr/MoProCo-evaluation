@@ -57,7 +57,11 @@ public class Airline {
    */
   public void addFlight(Flight f) {
     // generated start
-    // generated end
+if (this.flights.stream().anyMatch(flight -> flight.getFlightNumber().equals(f))) {
+    throw new IllegalArgumentException("Flight with the specified ID already exists");
+}
+this.addToFlights(f);
+// generated end
     // insert your code here
 
   }

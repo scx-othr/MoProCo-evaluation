@@ -83,7 +83,7 @@ public class Customer {
    */
   public Customer(String name, String email) {
     // generated start
-name = name; email = email; if (!email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}")) { throw new IllegalArgumentException("Invalid email address"); }
+this.name = name; this.email = email; if (!email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}")) { throw new IllegalArgumentException("Invalid email address"); }
 // generated end
     // insert your code here
 
@@ -96,7 +96,6 @@ name = name; email = email; if (!email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+
    */
   public Boolean placeOrder(Order o) {
     // generated start
-public Boolean placeOrder(Order o) {
     for (OrderItem item : o.getItems()) {
         Article article = item.getArticle();
         if (article == null || article.getItemsInStock() < item.getQuantity()) {
@@ -106,7 +105,6 @@ public Boolean placeOrder(Order o) {
     }
     this.addToOrders(o);
     return true;
-}
 // generated end
     // insert your code here
 

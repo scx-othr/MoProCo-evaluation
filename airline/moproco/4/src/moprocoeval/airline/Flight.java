@@ -1,5 +1,7 @@
 package moprocoeval.airline;
 
+import moprocoeval.Date;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -83,7 +85,12 @@ public class Flight {
    */
   public void addSeat(Seat s) {
     // generated start
-    // generated end
+if (this.seats.stream().anyMatch(seat -> seat.getSeatNumber().equals(s))) {
+  throw new IllegalArgumentException("Seat with the specified ID already exists");
+}
+this.addToSeats(s);
+s.setStatus(SeatStatus.AVAILABLE);
+// generated end
     // insert your code here
 
   }

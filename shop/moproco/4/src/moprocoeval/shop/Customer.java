@@ -83,13 +83,11 @@ public class Customer {
    */
   public Customer(String name, String email) {
     // generated start
-public Customer(String name, String email) {
   if (!email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")) {
     throw new IllegalArgumentException("Invalid email address");
   }
   setName(name);
   setEmail(email);
-}
 // generated end
     // insert your code here
 
@@ -102,7 +100,6 @@ public Customer(String name, String email) {
    */
   public Boolean placeOrder(Order o) {
     // generated start
-public Boolean placeOrder(Order o) {
   for (OrderItem item : o.getItems()) {
     Article article = item.getArticle();
     if (article.getItemsInStock() < item.getQuantity()) {
@@ -112,7 +109,6 @@ public Boolean placeOrder(Order o) {
   }
   addToOrders(o);
   return true;
-}
 // generated end
     // insert your code here
 

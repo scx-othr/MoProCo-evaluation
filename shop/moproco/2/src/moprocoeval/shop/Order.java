@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import java.util.UUID;
+
 public class Order {
   // generated properties
   private String orderID;
@@ -73,11 +75,8 @@ public class Order {
    */
   public Order() {
     // generated start
-import java.util.UUID;
 
-public Order() {
     this.orderID = UUID.randomUUID().toString();
-}
 // generated end
     // insert your code here
 
@@ -89,7 +88,6 @@ public Order() {
    */
   public Boolean addItem(OrderItem item) {
     // generated start
-public Boolean addItem(OrderItem item) {
     for (OrderItem existingItem : this.items) {
         if (existingItem.getArticle().getEan().equals(item.getArticle().getEan())) {
             existingItem.setQuantity(existingItem.getQuantity() + item.getQuantity());
@@ -99,7 +97,6 @@ public Boolean addItem(OrderItem item) {
     this.items.add(item);
     item.setOrder(this);
     return true;
-}
 // generated end
     // insert your code here
 

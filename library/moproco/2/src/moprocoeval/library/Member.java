@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import moprocoeval.Date;
+
 public class Member {
   // generated properties
   private String memberID;
@@ -96,17 +98,13 @@ if (!c.getStatus().equals(CopyStatus.AVAILABLE)) {
 } else {
     Loan loan = new Loan();
     loan.setLoanDate(new Date());
-    Calendar calendar = Calendar.getInstance();
-    calendar.setTime(loan.getLoanDate());
-    calendar.add(Calendar.DAY_OF_MONTH, 42);
-    loan.setDueDate(calendar.getTime());
     loan.setClosed(false);
     c.setStatus(CopyStatus.ON_LOAN);
     loan.setCopy(c);
     c.addToLoans(loan);
     loan.setMember(this);
     this.addToLoan(loan);
-    return c;
+    return loan;
 }
 // generated end
     // insert your code here
@@ -120,7 +118,7 @@ if (!c.getStatus().equals(CopyStatus.AVAILABLE)) {
    */
   public void returnCopy(Copy c) {
     // generated start
-Loan loan = getLoans().stream()
+Loan loan = getLoan().stream()
     .filter(l -> l.getCopy() == c && !l.getClosed())
     .findFirst()
     .orElseThrow(() -> new IllegalArgumentException("No non-closed loan found for the provided copy and member"));

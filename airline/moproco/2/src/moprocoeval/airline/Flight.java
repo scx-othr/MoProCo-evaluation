@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import moprocoeval.Date;
+
 public class Flight {
   // generated properties
   private String flightNumber;
@@ -81,9 +83,14 @@ public class Flight {
    * @prompt If a seat with the given seat number already exists, raise an exception. Otherwise add
    *     the seat to the flight and set the seat's status to available.
    */
-  public void addSeat(Seat s) {
+  public void addSeat(Seat seat) {
     // generated start
-    // generated end
+if (this.getSeats().stream().anyMatch(s -> s.getSeatNumber().equals(s.getSeatNumber()))) {
+  throw new IllegalArgumentException("Seat with number " + seat.getSeatNumber() + " already exists");
+}
+seat.setFlight(this);
+seat.setStatus(SeatStatus.AVAILABLE);
+// generated end
     // insert your code here
 
   }
