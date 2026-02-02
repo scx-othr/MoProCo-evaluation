@@ -1,13 +1,18 @@
 @startuml
+title Member::returnCopy(c : Copy)
+
 start
-:Find active Loan for c and m;
-
-if (Loan l exists) then (yes)
-  :Call l.close();
-  :c.status = Available;
-else (no)
-  :Reject return;
-endif
-
+if (not c.loans.exists(l | l.member = this and l.copy = c and l.closed = false)) then ([true])
+  :raise("Copy is not borrowed by this member.");
+  stop
+else ([false])
+    :l := c.loans->select(l | l.member = this and l.copy = c and l.closed = false)->first();
+    if (c.loan.returnDate.isAfter(c.loan.dueDate)) then ([true])
+        :println("Loan has been exceeded!");
+    else ([false])
+    endif
+    :l.returnDate := now();
+    :l.closed := true;
+    :c.status := BookStatus::Available;
 stop
 @enduml

@@ -1,12 +1,12 @@
 @startuml
+title Airline::addFlight(f : Flight)
+
 start
-:Check flightNumber uniqueness;
-
-if (flightNumber already exists) then (yes)
-  :Reject request;
-else (no)
-  :Add f to Airline.flights;
+if (self.flights->exists(x | x.flightNumber = f.flightNumber)) then ([true])
+  :raise("Flight already exists");
+  stop
+else ([false])
+  :self.flights := flights->including(f);
+  stop
 endif
-
-stop
 @enduml

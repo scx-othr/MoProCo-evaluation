@@ -1,4 +1,6 @@
 @startuml
+hide circle
+
 class Library {
   +registerMember(m: Member)
   +addBook(b: Book)
@@ -12,6 +14,7 @@ class Member {
 }
 
 class Book {
+  +author: String
   +isbn: String
   +title: String
 }
@@ -24,8 +27,8 @@ class Copy {
 class Loan {
   +loanDate: Date
   +dueDate: Date
+  +returnDate: Date [0..1]
   +closed: Boolean
-  +close()
 }
 
 enum CopyStatus {
@@ -33,9 +36,9 @@ enum CopyStatus {
   OnLoan
 }
 
-Library "1" o-- "*" Member
-Library "1" o-- "*" Book
-Book "1" o-- "*" Copy
-Member "1" -- "*" Loan
-Copy "1" -- "0..1" Loan
+Library "+libraries 1..*" o-- "+members *" Member: hasMembers
+Library "+library 1" *-- "+books *" Book: hasBooks
+Book "+book 1" *-- "+copies *" Copy: hasCopies
+Member "+member 1" o-- "+loans *" Loan: hasLoans
+Copy "+copy 1" o-- "+loans *" Loan: isBorrowedBy
 @enduml

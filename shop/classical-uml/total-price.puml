@@ -1,0 +1,9 @@
+@startuml
+title Order::totalPrice() : Decimal
+
+start
+:return self.items->collect(
+  i | i.article.currentPrice * i.quantity
+)->sum();
+stop
+@enduml

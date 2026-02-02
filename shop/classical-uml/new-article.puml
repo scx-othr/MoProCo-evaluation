@@ -1,0 +1,14 @@
+@startuml
+title Article::Article(ean : String, name : String, price : Decimal)
+
+start
+if (not ean.isValidEAN()) then (true)
+  :raise("Invalid EAN code");
+endif
+
+:self.ean := ean;
+:self.name := name;
+:self.currentPrice := price;
+:self.itemsInStock := 0;
+stop
+@enduml

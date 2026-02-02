@@ -1,0 +1,41 @@
+@startuml
+hide circle
+
+class Shop {
+  +registerCustomer(c : Customer) : Boolean
+  +findCustomer(email : String) : Customer
+  +findArticle(ean : String) : Article
+}
+
+class Customer {
+  +name : String
+  +email : String
+  +Customer(name : String, email : String)
+  +placeOrder(o : Order) : Boolean
+}
+
+class Order {
+  +orderID : String
+  +addItem(item : OrderItem) : Boolean
+  +Order()
+  +totalPrice() : Decimal
+}
+
+class Article {
+  +ean : String
+  +name : String
+  +currentPrice : Decimal
+  +itemsInStock : Integer
+  +Article(ean : String, name : String, price: Decimal)
+}
+
+class OrderItem {
+  +quantity : Integer
+}
+
+Shop "+shop 1" o-- "+customers 0..*" Customer : hasCustomers
+Customer "+customer 1..*" *-- "+orders 0..*" Order : hasOrders
+Order "+order 1" *-- "+items 0..*" OrderItem : hasItems
+OrderItem "+items *" -- "+article 1" Article : refersToArticle
+Shop "+shop 1" *-- "+articles *" Article : offersArticles
+@enduml

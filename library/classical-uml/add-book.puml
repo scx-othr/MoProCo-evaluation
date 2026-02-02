@@ -1,13 +1,12 @@
 @startuml
+title Library::addBook(b : Book)
+
 start
-:Check ISBN uniqueness;
-
-if (ISBN exists) then (yes)
-  :Reject book;
-else (no)
-  :Add b to Library.books;
-  :Ensure b has >= 1 Copy;
+if (self.books->exists(x | x.isbn = b.isbn)) then ([true])
+  :raise("Book with this ISBN is already registered.");
+  stop
+else ([false])
+  :self.books := self.books->including(b);
+  stop
 endif
-
-stop
 @enduml

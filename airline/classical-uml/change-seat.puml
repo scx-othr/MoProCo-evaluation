@@ -1,21 +1,14 @@
 @startuml
+title Reservation::changeSeat(newSeat : Seat)
+
 start
-:Validate ownership;
-
-if (r.passenger != self) then (yes)
-  :Reject request;
+if (newSeat.status <> SeatStatus::Available) then ([true])
+  :raise("Seat is already reserved.");
   stop
+else ([false])
+  :r.seat.status := SeatStatus::Available;
+  :r.seat := newSeat;
+  :newSeat.status := SeatStatus::Reserved;
 endif
-
-if (newSeat.status == Available) then (yes)
-  :oldSeat = r.seat;
-  :oldSeat.status = Available;
-  :Detach Reservation from oldSeat;
-  :Attach Reservation to newSeat;
-  :newSeat.status = Reserved;
-else (no)
-  :Reject request;
-endif
-
 stop
 @enduml

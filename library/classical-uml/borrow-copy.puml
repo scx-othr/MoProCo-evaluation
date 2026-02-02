@@ -1,18 +1,19 @@
 @startuml
+title Member::borrowCopy(c : Copy) : Loan
+
 start
-:Request borrow(c);
-
-if (c.status == Available) then (yes)
-  :Create Loan;
-  :loanDate = now;
-  :dueDate = now + 6 weeks;
-  :Associate Loan with Member;
-  :Associate Loan with Copy;
-  :c.status = OnLoan;
-  :Return Loan;
-else (no)
-  :Reject request;
+if (c.status <> CopyStatus::Available) then ([true])
+  :raise("Copy is not available.");
+  stop
+else ([false])
+  :l := new Loan;
+  :l.book := b;
+  :l.member := this;
+  :l.loanDate := now();
+  :l.dueDate := now().plusMonths(6);
+  :c.status := CopyStatus::OnLoan;
+  :l.closed := false;
+  :return l;
+  stop
 endif
-
-stop
 @enduml

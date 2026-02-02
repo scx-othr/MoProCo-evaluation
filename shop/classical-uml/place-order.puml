@@ -1,0 +1,17 @@
+@startuml
+title Customer::placeOrder(o : Order) : Boolean
+
+start
+if (o.items->exists(i | i.article.itemsInStock < i.quantity)) then ([true])
+  :return false;
+  stop
+else ([false])
+    group for i in o.items
+    :i.article.itemsInStock := i.article.itemsInStock - i.quantity;
+    end group
+
+    :self.orders := self.orders->including(o);
+    :return true;
+    stop
+endif
+@enduml

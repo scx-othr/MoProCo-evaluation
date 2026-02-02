@@ -1,0 +1,12 @@
+@startuml
+title Shop::findCustomer(email : String) : Customer
+
+start
+:matches := self.customers->select(x | x.email = email);
+
+if (matches->isEmpty()) then (true)
+  :raise("Customer not found");
+else (false)
+  :return matches->first();
+endif
+@enduml

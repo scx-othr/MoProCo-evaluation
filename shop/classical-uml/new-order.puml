@@ -1,0 +1,7 @@
+@startuml
+title Order::Order()
+
+start
+:self.orderID := UUID.random();
+stop
+@enduml

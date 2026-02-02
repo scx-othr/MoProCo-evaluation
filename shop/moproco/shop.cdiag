@@ -1,0 +1,92 @@
+package moprocoExamples {
+    primitive Boolean
+    primitive String
+    primitive Decimal
+    primitive Integer
+    
+    package shop {
+        class Shop {
+            public registerCustomer(c : Customer) : Boolean {
+                spec "If a customer with the same email already exists, do not add and return false.
+                    Otherwise add the customer and return true."
+            }
+            public findCustomer(email : String) : Customer {
+                spec "Return the customer matching the provided email address."
+            }
+            public findArticle(ean : String) : Article {
+                spec "Return the article mathing the provided ean."
+            }
+        }
+
+        class Customer {
+            public name : String
+            public email : String
+
+            public Customer(name : String, email : String) {
+                spec "Create a new Customer with given name and email.
+                    If the provided email address is not valid, raise an exception."
+            }
+            public placeOrder(o : Order) : Boolean {
+                spec "For every item of the order, check if enough items are in stock.
+                    If so, add to orders and update the items in stock by subtracting the chosen quantity.
+                    Return whether order was added."
+            }
+        }
+
+        class Order {
+            public orderID : String
+
+            public Order() {
+                spec "Create a new order and generate a random UUID for its ID."
+            }
+            public addItem(item : OrderItem) : Boolean {
+                spec "If an item referring to the same article already exists in the order, reuse that one and increment its quantity accordingly.
+                    Otherwise, add the order item to the current order."
+            }
+            public totalPrice() : Decimal {
+                spec "Return the sum of the products of prices and quantity of all referenced order items."
+            }
+        }
+
+        class Article {
+            public ean : String
+            public name : String
+            public currentPrice : Decimal
+            public itemsInStock : Integer
+
+            public Article(ean : String, name : String, price : Decimal) {
+                spec "Create a new article from the provided EAN, name, and price.
+                    The provided ean must be a fully qualified EAN code according to the official definition."
+            }
+        }
+
+        class OrderItem {
+            public quantity : Integer
+        }
+
+        assoc hasCustomers {
+            public shop : Shop [1..1]
+            public customers : Customer [0..-1] shared
+        }
+
+        assoc hasOrders {
+            public customer : Customer [1..1]
+            public orders : Order [0..-1] composite
+        }
+
+        assoc hasItems {
+            public order : Order [1..1]
+            public items : OrderItem [0..-1] composite
+        }
+
+        assoc refersToArticle {
+            public items : OrderItem [0..-1]
+            public article : Article [0..1] 
+        }
+
+        assoc offersArticles {
+            public shop : Shop [1..1]
+            public articles : Article [0..-1]
+        }
+    }
+}

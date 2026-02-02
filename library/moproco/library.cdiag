@@ -1,0 +1,87 @@
+package moprocoExamples {
+    primitive Boolean
+    primitive String
+    primitive Decimal
+    primitive Integer
+
+    datatype Date {
+        day: Integer
+        month: Integer
+        year: Integer
+    }
+
+    package library {
+        enum CopyStatus { AVAILABLE, ON_LOAN }
+
+        class Library {
+            public registerMember(m : Member) {
+                spec "If a member with the specified ID already exists, raise an exception.
+                    Otherwise add the member to the library."
+            }
+            public addBook(b : Book) {
+                spec "If a book with the specified ISBN already exists, raise an exception.
+                    Otherwise add the book to the library."
+            }
+        }
+
+        class Book {
+            public isbn : String
+            public title : String
+            public author : String
+        }
+
+        class Member {
+            public memberID : String
+            public name : String
+
+            public borrowCopy(c : Copy) : Loan {
+                spec "If the copy is not available, reject the request.
+                    Otherwise create a new loan, set its loan date to the current date and the due date to six weeks from today.
+                    Associate the loan with both the member and the copy.
+                    Set the loan to non-closed, the copy's status to \"on loan\" and return the copy."
+            }
+            public returnCopy(c : Copy) {
+                spec "Find a non-closed loan for the provided copy and member.
+                    If such a loan exists, set it closed, set the return date to now, and set the copy's status to available.
+                    If no such loan exists, raise an exception."
+            }
+        }
+
+        class Copy {
+            public copyId : String
+            public status : CopyStatus
+        }
+
+        class Loan {
+            public loanDate : Date
+            public dueDate : Date
+            public returnDate : Date [0..1]
+            public closed : Boolean
+        }
+
+        assoc hasMembers {
+            public libraries : Library [1..-1]
+            public members : Member [0..-1] shared
+        }
+
+        assoc hasBooks {
+            public library : Library [1..1]
+            public books : Book [0..-1]
+        }
+
+        assoc hasCopies {
+            public book : Book [1..1]
+            public copies : Copy [0..-1] composite
+        }
+
+        assoc hasLoans {
+            public member : Member [1..1]
+            public loan : Loan [0..-1] shared
+        }
+
+        assoc isBorrowedBy {
+            public copy : Copy [1..1]
+            public loans : Loan [0..-1] shared 
+        }
+    }
+}

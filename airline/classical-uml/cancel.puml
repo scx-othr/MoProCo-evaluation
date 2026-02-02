@@ -1,12 +1,9 @@
 @startuml
-start
-if (Reservation active) then (yes)
-  :Seat.status = Available;
-  :Remove association to Passenger;
-  :Remove association to Seat;
-else (no)
-  :Ignore request;
-endif
+title Reservation::cancel()
 
+start
+  :self.seat.status := SeatStatus::Available;
+  :self.seat := null;
+  :self.passenger := null;
 stop
 @enduml

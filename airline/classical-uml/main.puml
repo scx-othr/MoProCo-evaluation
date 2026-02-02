@@ -1,4 +1,6 @@
 @startuml
+hide circle
+
 class Airline {
   +name: String
   +addFlight(f: Flight)
@@ -8,12 +10,12 @@ class Flight {
   +flightNumber: String
   +date: Date
   +addSeat(s: Seat)
-  +reserveSeat(s: Seat, p: Passenger): Reservation
 }
 
 abstract class Seat {
   +seatNumber: String
   +status: SeatStatus
+  +reserve(p: Passenger): Reservation
 }
 
 class EconomySeat
@@ -25,11 +27,11 @@ class BusinessSeat {
 class Passenger {
   +passengerId: String
   +name: String
-  +changeSeat(r: Reservation, newSeat: Seat)
 }
 
 class Reservation {
   +reservationDate: Date
+  +changeSeat(newSeat: Seat)
   +cancel()
 }
 
@@ -38,10 +40,10 @@ enum SeatStatus {
   Reserved
 }
 
-Airline "1" o-- "*" Flight
-Flight "1" o-- "*" Seat
-Passenger "1" -- "*" Reservation
-Seat "1" -- "0..1" Reservation
+Airline "+airline 1" *-- "+flights *" Flight: has flights
+Flight "+flight 1" *-- "+seats *" Seat: has seats
+Passenger "+passenger 1" o-- "+reservations *" Reservation: has reservations
+Seat "+seat 1" o-- "+reservation 0..1" Reservation: is reserved
 
 Seat <|-- EconomySeat
 Seat <|-- BusinessSeat

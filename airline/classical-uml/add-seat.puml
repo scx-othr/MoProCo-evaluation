@@ -1,13 +1,12 @@
 @startuml
+title Flight::addSeat(s : Seat)
+
 start
-:Check seatNumber uniqueness;
-
-if (seatNumber already exists) then (yes)
-  :Reject request;
-else (no)
-  :Assign s to Flight;
-  :s.status = Available;
+if (self.seats->exists(x | x.seatNumber = s.seatNumber)) then ([true])
+  stop
+else ([false])
+  :self.seats := self.seats->including(s);
+  :s.status := SeatStatus::Available;
+  stop
 endif
-
-stop
 @enduml

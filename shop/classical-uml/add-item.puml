@@ -1,0 +1,19 @@
+@startuml
+title Order::addItem(item : OrderItem) : Boolean
+
+start
+:existing := self.items->select(
+  x | x.article = item.article
+);
+
+if (existing->notEmpty()) then ([true])
+  :oi := existing->first();
+  :oi.quantity := oi.quantity + item.quantity;
+  :return false;
+  stop
+else ([false])
+  :self.items := self.items->including(item);
+  :return true;
+  stop
+endif
+@enduml

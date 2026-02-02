@@ -1,0 +1,12 @@
+@startuml
+title Shop::findArticle(ean : String) : Article
+
+start
+:matches := self.articles->select(x | x.ean = ean);
+
+if (matches->isEmpty()) then ([true])
+  :raise("Article not found");
+else (false)
+  :return matches->first;
+endif
+@enduml
