@@ -1,0 +1,51 @@
+package moprocoeval.library;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+public class Book {
+    private String author;
+    private String title;
+    private String isbn;
+    private List<Copy> copies;
+
+    public Book(String author, String title, String isbn) {
+        this.author = author;
+        this.title = title;
+        this.isbn = isbn;
+        this.copies = new ArrayList<>();
+    }
+
+    public void addCopy(Copy copy) {
+        copies.add(copy);
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public List<Copy> getCopies() {
+        return new ArrayList<>(copies);
+    }
+}

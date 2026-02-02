@@ -1,4 +1,4 @@
-package moprocoExamples {
+package moprocoeval {
     primitive String
     primitive Integer
 

@@ -1,6 +1,7 @@
 Generate the Java source code for the business logic of a library management system.
 Generate private fields, public getters and setters, and additional public operations as suggested.
 Follow exactly the structure and behavior described below, without inventing additional details.
+Include all Java files in your response, assuming "moprocoeval.library" as package name.
 
 ## Structure
 

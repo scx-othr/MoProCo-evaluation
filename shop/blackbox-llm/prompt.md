@@ -1,6 +1,7 @@
 Generate the Java source code for the business logic of an online shopping system.
 Generate private fields, public getters and setters, and additional public constructors and operations as suggested.
 Follow exactly the structure and behavior described below, without inventing additional details.
+Include all Java files in your response, assuming "moprocoeval.shop" as package name.
 
 ## Structure
 
