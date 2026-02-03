@@ -6,7 +6,7 @@
 
 ## Activity diagrams
 
-![registerCostumer](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/scx-othr/MoProCo-evaluation/refs/heads/main/shop/classical-uml/register-costumer.puml)
+![registerCostumer](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/scx-othr/MoProCo-evaluation/refs/heads/main/shop/classical-uml/register-customer.puml)
 
 ![findCustomer](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/scx-othr/MoProCo-evaluation/refs/heads/main/shop/classical-uml/find-customer.puml)
 
