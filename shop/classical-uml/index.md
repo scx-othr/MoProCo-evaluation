@@ -18,10 +18,8 @@
 
 ![new Order](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/scx-othr/MoProCo-evaluation/refs/heads/main/shop/classical-uml/new-order.puml)
 
-![addItem](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/scx-othr/MoProCo-evaluation/refs/heads/main/shop/classical-uml/add-Item.puml)
+![addItem](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/scx-othr/MoProCo-evaluation/refs/heads/main/shop/classical-uml/add-item.puml)
 
 ![totalPrice](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/scx-othr/MoProCo-evaluation/refs/heads/main/shop/classical-uml/total-price.puml)
 
 ![new Article](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/scx-othr/MoProCo-evaluation/refs/heads/main/shop/classical-uml/new-article.puml)
-
-![registerCostumer](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/scx-othr/MoProCo-evaluation/refs/heads/main/shop/classical-uml/registerCostumer.puml)

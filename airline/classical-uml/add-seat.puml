@@ -1,12 +1,12 @@
 @startuml
-title Flight::addSeat(s : Seat)
+title Flight::addSeat(seat : Seat)
 
 start
-if (self.seats->exists(x | x.seatNumber = s.seatNumber)) then ([true])
+if (self.seats->exists(s | s.seatNumber = seat.seatNumber)) then ([true])
   stop
 else ([false])
-  :self.seats := self.seats->including(s);
-  :s.status := SeatStatus::Available;
+  :self.seats := self.seats->including(seat);
+  :seat.status := SeatStatus::Available;
   stop
 endif
 @enduml

@@ -2,7 +2,7 @@
 hide circle
 
 class Shop {
-  +registerCustomer(c : Customer) : Boolean
+  +registerCustomer(customer : Customer) : Boolean
   +findCustomer(email : String) : Customer
   +findArticle(ean : String) : Article
 }
@@ -11,7 +11,7 @@ class Customer {
   +name : String
   +email : String
   +Customer(name : String, email : String)
-  +placeOrder(o : Order) : Boolean
+  +placeOrder(order : Order) : Boolean
 }
 
 class Order {

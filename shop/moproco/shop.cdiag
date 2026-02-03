@@ -6,7 +6,7 @@ package moprocoeval {
     
     package shop {
         class Shop {
-            public registerCustomer(c : Customer) : Boolean {
+            public registerCustomer(customer : Customer) : Boolean {
                 spec "If a customer with the same email already exists, do not add and return false.
                     Otherwise add the customer and return true."
             }
@@ -26,7 +26,7 @@ package moprocoeval {
                 spec "Create a new Customer with given name and email.
                     If the provided email address is not valid, raise an exception."
             }
-            public placeOrder(o : Order) : Boolean {
+            public placeOrder(order : Order) : Boolean {
                 spec "For every item of the order, check if enough items are in stock.
                     If so, add to orders and update the items in stock by subtracting the chosen quantity.
                     Return whether order was added."

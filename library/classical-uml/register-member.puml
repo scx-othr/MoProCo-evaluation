@@ -1,12 +1,12 @@
 @startuml
-title Library::registerMember(m : Member)
+title Library::registerMember(member : Member)
 
 start
-if (self.members->exists(x | x.memberId = m.memberId)) then ([true])
+if (self.members->exists(m | m.memberId = member.memberId)) then ([true])
   :raise("Member ID is already registered.");
   stop
 else ([false])
-  :self.members := self.members->including(m);
+  :self.members := self.members->including(member);
   stop
 endif
 @enduml

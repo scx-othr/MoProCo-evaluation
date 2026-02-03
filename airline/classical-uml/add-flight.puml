@@ -1,12 +1,12 @@
 @startuml
-title Airline::addFlight(f : Flight)
+title Airline::addFlight(flight : Flight)
 
 start
-if (self.flights->exists(x | x.flightNumber = f.flightNumber)) then ([true])
+if (self.flights->exists(f | f.flightNumber = flight.flightNumber)) then ([true])
   :raise("Flight already exists");
   stop
 else ([false])
-  :self.flights := flights->including(f);
+  :self.flights := flights->including(flight);
   stop
 endif
 @enduml

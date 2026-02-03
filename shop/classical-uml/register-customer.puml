@@ -1,12 +1,12 @@
 @startuml
-title Shop::registerCustomer(c : Customer) : Boolean
+title Shop::registerCustomer(customer : Customer) : Boolean
 
 start
-if (self.customers->exists(x | x.email = c.email)) then ([true])
+if (self.customers->exists(c | c.email = customer.email)) then ([true])
   :return false;
   stop
 else ([false])
-  :self.customers := self.customers->including(c);
+  :self.customers := self.customers->including(customer);
   :return true;
   stop
 endif

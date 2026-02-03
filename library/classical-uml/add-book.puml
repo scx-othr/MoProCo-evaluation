@@ -1,12 +1,12 @@
 @startuml
-title Library::addBook(b : Book)
+title Library::addBook(book : Book)
 
 start
-if (self.books->exists(x | x.isbn = b.isbn)) then ([true])
+if (self.books->exists(b | b.isbn = book.isbn)) then ([true])
   :raise("Book with this ISBN is already registered.");
   stop
 else ([false])
-  :self.books := self.books->including(b);
+  :self.books := self.books->including(book);
   stop
 endif
 @enduml

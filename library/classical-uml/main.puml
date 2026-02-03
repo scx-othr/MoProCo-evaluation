@@ -2,15 +2,15 @@
 hide circle
 
 class Library {
-  +registerMember(m: Member)
-  +addBook(b: Book)
+  +registerMember(member: Member)
+  +addBook(book: Book)
 }
 
 class Member {
   +memberId: String
   +name: String
-  +borrowCopy(c: Copy): Loan
-  +returnCopy(c: Copy)
+  +borrowCopy(copy: Copy): Loan
+  +returnCopy(copy: Copy)
 }
 
 class Book {

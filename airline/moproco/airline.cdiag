@@ -34,7 +34,7 @@ package moprocoeval {
             public seatNumber : String
             public status : SeatStatus
 
-            public reserve(p : Passenger) : Reservation {
+            public reserve(passenger : Passenger) : Reservation {
                 spec "If the seat is not available, raise an exception.
                     Otherwise create a new reservation and associate it with the current passenger and the provided seat.
                     Set the reservation date to now.

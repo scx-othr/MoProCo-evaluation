@@ -1,5 +1,5 @@
 @startuml
-title Seat::reserve(p : Passenger) : Reservation
+title Seat::reserve(passenger : Passenger) : Reservation
 
 start
 if (this.status <> SeatStatus::Available) then ([true])
@@ -7,7 +7,7 @@ if (this.status <> SeatStatus::Available) then ([true])
   stop
 else ([false])
   :r := new Reservation;
-  :r.passenger := p;
+  :r.passenger := passenger;
   :r.seat := this;
   :r.reservationDate := now();
   :s.status := SeatStatus::Reserved;

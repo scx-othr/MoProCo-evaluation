@@ -3,19 +3,19 @@ hide circle
 
 class Airline {
   +name: String
-  +addFlight(f: Flight)
+  +addFlight(flight: Flight)
 }
 
 class Flight {
   +flightNumber: String
   +date: Date
-  +addSeat(s: Seat)
+  +addSeat(seat: Seat)
 }
 
 abstract class Seat {
   +seatNumber: String
   +status: SeatStatus
-  +reserve(p: Passenger): Reservation
+  +reserve(passenger: Passenger): Reservation
 }
 
 class EconomySeat
