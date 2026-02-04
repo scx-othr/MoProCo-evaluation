@@ -1,0 +1,21 @@
+{
+	"usage": {
+		"response_token/s": 23.62,
+		"prompt_token/s": 1102.45,
+		"total_duration": 49920787959,
+		"load_duration": 88498626,
+		"prompt_eval_count": 623,
+		"prompt_tokens": 623,
+		"prompt_eval_duration": 565105144,
+		"eval_count": 1105,
+		"completion_tokens": 1105,
+		"eval_duration": 46791712668,
+		"approximate_total": "0h0m49s",
+		"total_tokens": 1728,
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	}
+}
