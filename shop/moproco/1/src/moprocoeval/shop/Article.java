@@ -101,8 +101,7 @@ public class Article {
    */
   public Article(String ean, String name, Double price) {
     // generated start
-ean = ean; name = name; currentPrice = price; itemsInStock = 0;
-// generated end
+    // generated end
     // insert your code here
 
   }

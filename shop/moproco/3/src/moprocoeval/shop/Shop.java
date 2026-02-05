@@ -71,16 +71,9 @@ public class Shop {
    * @prompt If a customer with the same email already exists, do not add and return false.
    *     Otherwise add the customer and return true.
    */
-  public Boolean registerCustomer(Customer c) {
+  public Boolean registerCustomer(Customer customer) {
     // generated start
-for (Customer existingCustomer : this.customers) {
-    if (existingCustomer.getEmail().equals(c.getEmail())) {
-        return false;
-    }
-}
-this.addToCustomers(c);
-return true;
-// generated end
+    // generated end
     // insert your code here
 
   }
@@ -90,14 +83,7 @@ return true;
    */
   public Customer findCustomer(String email) {
     // generated start
-    // Assuming there is a list of customers named 'customers'
-    for (Customer customer : customers) {
-        if (customer.getEmail().equals(email)) {
-            return customer;
-        }
-    }
-    return null; // Return null if no customer is found
-// generated end
+    // generated end
     // insert your code here
 
   }
@@ -107,11 +93,7 @@ return true;
    */
   public Article findArticle(String ean) {
     // generated start
-    return articles.stream()
-                  .filter(article -> article.getEan().equals(ean))
-                  .findFirst()
-                  .orElse(null);
-// generated end
+    // generated end
     // insert your code here
 
   }

@@ -1,6 +1,5 @@
 package moprocoeval.airline;
 
-import moprocoeval.Date;
 
 public abstract class Seat {
   // generated properties
@@ -74,18 +73,9 @@ public abstract class Seat {
    *     and associate it with the current passenger and the provided seat. Set the reservation date
    *     to now. Finally, set the seat's status to reserved and return the reservation.
    */
-  public Reservation reserve(Passenger p) {
+  public Reservation reserve(Passenger passenger) {
     // generated start
-if (status != SeatStatus.AVAILABLE) {
-    throw new IllegalArgumentException("Seat is not available");
-}
-Reservation reservation = new Reservation();
-reservation.setPassenger(p);
-reservation.setSeat(this);
-reservation.setReservationDate(new Date());
-setStatus(SeatStatus.RESERVED);
-return reservation;
-// generated end
+    // generated end
     // insert your code here
 
   }

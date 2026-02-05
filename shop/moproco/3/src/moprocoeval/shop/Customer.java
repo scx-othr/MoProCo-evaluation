@@ -83,11 +83,7 @@ public class Customer {
    */
   public Customer(String name, String email) {
     // generated start
-if (!email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}")) {
-  throw new IllegalArgumentException("Invalid email address");
-}
-this.name = name; this.email = email;
-// generated end
+    // generated end
     // insert your code here
 
   }
@@ -97,23 +93,9 @@ this.name = name; this.email = email;
    *     and update the items in stock by subtracting the chosen quantity. Return whether order was
    *     added.
    */
-  public Boolean placeOrder(Order o) {
+  public Boolean placeOrder(Order order) {
     // generated start
-boolean allItemsInStock = true;
-for (OrderItem item : o.getItems()) {
-    Article article = item.getArticle();
-    if (article == null || item.getQuantity() > article.getItemsInStock()) {
-        allItemsInStock = false;
-        break;
-    } else {
-        article.setItemsInStock(article.getItemsInStock() - item.getQuantity());
-    }
-}
-if (allItemsInStock) {
-    this.addToOrders(o);
-}
-return allItemsInStock;
-// generated end
+    // generated end
     // insert your code here
 
   }

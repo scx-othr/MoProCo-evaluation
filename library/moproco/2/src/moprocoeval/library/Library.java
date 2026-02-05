@@ -73,12 +73,7 @@ public class Library {
    */
   public void registerMember(Member member) {
     // generated start
-if (this.members.stream().anyMatch(m -> m.getMemberID().equals(m.getMemberID()))) {
-    throw new IllegalArgumentException("Member with specified ID already exists");
-} else {
-    this.addToMembers(member);
-}
-// generated end
+    // generated end
     // insert your code here
 
   }
@@ -89,12 +84,7 @@ if (this.members.stream().anyMatch(m -> m.getMemberID().equals(m.getMemberID()))
    */
   public void addBook(Book book) {
     // generated start
-if (getBooks().stream().anyMatch(b -> b.getIsbn().equals(book.getIsbn()))) {
-    throw new IllegalArgumentException("Book with specified ISBN already exists.");
-} else {
-    addToBooks(book);
-}
-// generated end
+    // generated end
     // insert your code here
 
   }

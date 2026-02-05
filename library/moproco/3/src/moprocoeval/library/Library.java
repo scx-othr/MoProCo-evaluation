@@ -71,13 +71,9 @@ public class Library {
    * @prompt If a member with the specified ID already exists, raise an exception. Otherwise add the
    *     member to the library.
    */
-  public void registerMember(Member m) {
+  public void registerMember(Member member) {
     // generated start
-if (this.members.stream().anyMatch(member -> member.getMemberID().equals(m.getMemberID()))) {
-    throw new IllegalArgumentException("Member with ID " + m.getMemberID() + " already exists");
-}
-this.addToMembers(m);
-// generated end
+    // generated end
     // insert your code here
 
   }
@@ -86,15 +82,9 @@ this.addToMembers(m);
    * @prompt If a book with the specified ISBN already exists, raise an exception. Otherwise add the
    *     book to the library.
    */
-  public void addBook(Book b) {
+  public void addBook(Book book) {
     // generated start
-if (this.books.stream().anyMatch(book -> book.getIsbn().equals(b.getIsbn()))) {
-  throw new IllegalArgumentException("Book with ISBN " + b.getIsbn() + " already exists.");
-} else {
-  this.books.add(b);
-  b.setLibrary(this);
-}
-// generated end
+    // generated end
     // insert your code here
 
   }

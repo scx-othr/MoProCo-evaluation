@@ -1,7 +1,5 @@
 package moprocoeval.library;
 
-import moprocoeval.Date;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,7 +12,7 @@ public class Member {
 
   // generated associations
   private List<Library> libraries = new ArrayList<Library>();
-  private List<Loan> loan = new ArrayList<Loan>();
+  private List<Loan> loans = new ArrayList<Loan>();
 
   // end of generated associations
 
@@ -60,24 +58,24 @@ public class Member {
     }
   }
 
-  public List<Loan> getLoan() {
-    return (List<Loan>) Collections.unmodifiableList(this.loan);
+  public List<Loan> getLoans() {
+    return (List<Loan>) Collections.unmodifiableList(this.loans);
   }
 
-  public int sizeOfLoan() {
-    return this.loan.size();
+  public int sizeOfLoans() {
+    return this.loans.size();
   }
 
-  public void addToLoan(Loan newValue) {
-    if (newValue != null && !this.loan.contains(newValue)) {
-      this.loan.add(newValue);
+  public void addToLoans(Loan newValue) {
+    if (newValue != null && !this.loans.contains(newValue)) {
+      this.loans.add(newValue);
       newValue.setMember(this);
     }
   }
 
-  public void removeFromLoan(Loan oldValue) {
-    if (oldValue != null && this.loan.contains(oldValue)) {
-      this.loan.remove(oldValue);
+  public void removeFromLoans(Loan oldValue) {
+    if (oldValue != null && this.loans.contains(oldValue)) {
+      this.loans.remove(oldValue);
       oldValue.setMember(null);
     }
   }
@@ -91,39 +89,9 @@ public class Member {
    *     with both the member and the copy. Set the loan to non-closed, the copy's status to "on
    *     loan" and return the copy.
    */
-  public Loan borrowCopy(Copy c) {
+  public Loan borrowCopy(Copy copy) {
     // generated start
-if (c.getStatus() != CopyStatus.AVAILABLE) {
-  throw new IllegalStateException("Copy is not available.");
-}
-Loan loan = new Loan();
-loan.setLoanDate(new Date());
-loan.setClosed(false);
-loan.setMember(this);
-loan.setCopy(c);
-c.setStatus(CopyStatus.ON_LOAN);
-return loan;
-// generated end
-    // insert your code here
-
-  }
-
-  /**
-   * @prompt Find a non-closed loan for the provided copy and member. If such a loan exists, set it
-   *     closed, set the return date to now, and set the copy's status to available. If no such loan
-   *     exists, raise an exception.
-   */
-  public void returnCopy(Copy c) {
-    // generated start
-Loan existingLoan = this.getLoan().stream()
-    .filter(loan -> loan.getCopy() == c && loan.getMember() == this && !loan.getClosed())
-    .findFirst()
-    .orElseThrow(() -> new IllegalArgumentException("No non-closed loan found for the provided copy and member."));
-
-existingLoan.setClosed(true);
-existingLoan.setReturnDate(new Date());
-c.setStatus(CopyStatus.AVAILABLE);
-// generated end
+    // generated end
     // insert your code here
 
   }

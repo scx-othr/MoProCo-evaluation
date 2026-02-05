@@ -3,12 +3,7 @@ package moprocoeval {
     primitive String
     primitive Decimal
     primitive Integer
-
-    datatype Date {
-        day: Integer
-        month: Integer
-        year: Integer
-    }
+    primitive Date
 
     package library {
         enum CopyStatus { AVAILABLE, ON_LOAN }
@@ -40,11 +35,6 @@ package moprocoeval {
                     Associate the loan with both the member and the copy.
                     Set the loan to non-closed, the copy's status to \"on loan\" and return the copy."
             }
-            public returnCopy(copy : Copy) {
-                spec "Find a non-closed loan for the provided copy and member.
-                    If such a loan exists, set it closed, set the return date to now, and set the copy's status to available.
-                    If no such loan exists, raise an exception."
-            }
         }
 
         class Copy {
@@ -57,6 +47,11 @@ package moprocoeval {
             public dueDate : Date
             public returnDate : Date [0..1]
             public closed : Boolean
+
+            public returnCopy(copy : Copy) {
+                spec "If the loan is open, set it closed, set the return date to now, and set the copy's status to available.
+                    Otherwise, raise an exception."
+            }
         }
 
         assoc hasMembers {

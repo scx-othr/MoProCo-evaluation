@@ -1,12 +1,7 @@
 package moprocoeval {
     primitive String
     primitive Integer
-
-    datatype Date {
-        day: Integer
-        month: Integer
-        year: Integer
-    }
+    primitive Date
     
     package airline {
         enum SeatStatus { AVALIABLE, RESERVED }

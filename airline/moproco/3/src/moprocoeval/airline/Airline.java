@@ -55,13 +55,9 @@ public class Airline {
    * @prompt If a flight with the specified ID already exists, raise an exception. Otherwise add the
    *     flight to the airline.
    */
-  public void addFlight(Flight f) {
+  public void addFlight(Flight flight) {
     // generated start
-if (this.flights.stream().anyMatch(flight -> flight.getFlightNumber().equals(f))) {
-  throw new IllegalArgumentException("Flight with ID already exists");
-}
-this.addToFlights(f);
-// generated end
+    // generated end
     // insert your code here
 
   }

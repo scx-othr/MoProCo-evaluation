@@ -21,7 +21,7 @@ Loans are always connected to one member.
 Each member may be part of several libraries and may have an arbitrary number of loans.
 Each member has a member ID and a name (both strings).
 Members can borrow a copy, which creates a new loan.
-Members may also return a copy.
+Members may also return a copy based on a given loan.
 
 ## Behavior: Register member
 
@@ -42,6 +42,5 @@ Set the loan to non-closed, the copy's status to "on loan" and return the copy.
 
 ## Behavior: Return copy
 
-Find a non-closed loan for the provided copy and member.
-If such a loan exists, set it closed, set the return date to now, and set the copy's status to available.
-If no such loan exists, raise an exception.
+If the loan is open, set it closed, set the return date to now, and set the copy's status to available.
+Otherwise, raise an exception.

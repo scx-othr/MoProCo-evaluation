@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import java.util.UUID;
-
 public class Order {
   // generated properties
   private String orderID;
@@ -75,9 +73,7 @@ public class Order {
    */
   public Order() {
     // generated start
-
-    this.orderID = UUID.randomUUID().toString();
-// generated end
+    // generated end
     // insert your code here
 
   }
@@ -88,16 +84,7 @@ public class Order {
    */
   public Boolean addItem(OrderItem item) {
     // generated start
-    for (OrderItem existingItem : this.items) {
-        if (existingItem.getArticle().getEan().equals(item.getArticle().getEan())) {
-            existingItem.setQuantity(existingItem.getQuantity() + item.getQuantity());
-            return true;
-        }
-    }
-    this.items.add(item);
-    item.setOrder(this);
-    return true;
-// generated end
+    // generated end
     // insert your code here
 
   }
@@ -107,8 +94,7 @@ public class Order {
    */
   public Double totalPrice() {
     // generated start
-return this.items.stream().mapToDouble(item -> item.getQuantity() * item.getArticle().getCurrentPrice()).sum();
-// generated end
+    // generated end
     // insert your code here
 
   }

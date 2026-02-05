@@ -2,9 +2,8 @@ package moprocoeval.airline;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
-
-import moprocoeval.Date;
 
 public class Flight {
   // generated properties
@@ -85,12 +84,7 @@ public class Flight {
    */
   public void addSeat(Seat seat) {
     // generated start
-if (this.getSeats().stream().anyMatch(s -> s.getSeatNumber().equals(s.getSeatNumber()))) {
-  throw new IllegalArgumentException("Seat with number " + seat.getSeatNumber() + " already exists");
-}
-seat.setFlight(this);
-seat.setStatus(SeatStatus.AVAILABLE);
-// generated end
+    // generated end
     // insert your code here
 
   }

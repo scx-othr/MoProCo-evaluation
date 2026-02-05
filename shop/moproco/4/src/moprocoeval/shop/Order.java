@@ -3,7 +3,6 @@ package moprocoeval.shop;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.UUID;
 
 public class Order {
   // generated properties
@@ -74,8 +73,7 @@ public class Order {
    */
   public Order() {
     // generated start
-  setOrderID(UUID.randomUUID().toString());
-// generated end
+    // generated end
     // insert your code here
 
   }
@@ -86,15 +84,7 @@ public class Order {
    */
   public Boolean addItem(OrderItem item) {
     // generated start
-  for (OrderItem existingItem : getItems()) {
-    if (existingItem.getArticle().getEan().equals(item.getArticle().getEan())) {
-      existingItem.setQuantity(existingItem.getQuantity() + item.getQuantity());
-      return true;
-    }
-  }
-  addToItems(item);
-  return true;
-// generated end
+    // generated end
     // insert your code here
 
   }
@@ -104,10 +94,7 @@ public class Order {
    */
   public Double totalPrice() {
     // generated start
-  return getItems().stream()
-                 .mapToDouble(item -> item.getArticle().getCurrentPrice() * item.getQuantity())
-                 .sum();
-// generated end
+    // generated end
     // insert your code here
 
   }

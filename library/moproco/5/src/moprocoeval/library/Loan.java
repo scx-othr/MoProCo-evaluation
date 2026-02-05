@@ -1,6 +1,6 @@
 package moprocoeval.library;
 
-import moprocoeval.Date;
+import java.util.Date;
 
 public class Loan {
   // generated properties
@@ -61,10 +61,10 @@ public class Loan {
       Member oldValue = member;
       if (oldValue != null) {
         this.member = null;
-        oldValue.removeFromLoan(this);
+        oldValue.removeFromLoans(this);
       }
       this.member = newValue;
-      if (newValue != null) newValue.addToLoan(this);
+      if (newValue != null) newValue.addToLoans(this);
     }
   }
 
@@ -83,8 +83,18 @@ public class Loan {
       if (newValue != null) newValue.addToLoans(this);
     }
   }
+
   // end of generated accessors for associations
 
   // generated operations
+  /**
+   * @prompt If the loan is open, set it closed, set the return date to now, and set the copy's
+   *     status to available. Otherwise, raise an exception.
+   */
+  public void returnCopy(Copy copy) {
+    // generated start
+    // generated end
+    // insert your code here
 
+  }
 }

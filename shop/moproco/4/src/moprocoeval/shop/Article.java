@@ -101,10 +101,7 @@ public class Article {
    */
   public Article(String ean, String name, Double price) {
     // generated start
-  setEan(ean);
-  setName(name);
-  setCurrentPrice(price);
-// generated end
+    // generated end
     // insert your code here
 
   }
