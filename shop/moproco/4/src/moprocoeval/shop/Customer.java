@@ -83,7 +83,15 @@ public class Customer {
    */
   public Customer(String name, String email) {
     // generated start
-    // generated end
+// Validate email format
+    if (email == null || !email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+      throw new IllegalArgumentException("Invalid email format");
+    }
+
+    // Set customer properties
+    this.setName(name);
+    this.setEmail(email);
+// generated end
     // insert your code here
 
   }
@@ -95,7 +103,22 @@ public class Customer {
    */
   public Boolean placeOrder(Order order) {
     // generated start
-    // generated end
+for (OrderItem item : order.getItems()) {
+      Article article = item.getArticle();
+      if (article == null) {
+        return false;
+      }
+      if (article.getItemsInStock() < item.getQuantity()) {
+        return false;
+      }
+    }
+    this.addToOrders(order);
+    for (OrderItem item : order.getItems()) {
+      Article article = item.getArticle();
+      article.setItemsInStock(article.getItemsInStock() - item.getQuantity());
+    }
+    return true;
+// generated end
     // insert your code here
 
   }

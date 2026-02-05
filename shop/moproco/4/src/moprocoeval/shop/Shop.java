@@ -73,7 +73,14 @@ public class Shop {
    */
   public Boolean registerCustomer(Customer customer) {
     // generated start
-    // generated end
+for (Customer existingCustomer : this.customers) {
+      if (existingCustomer.getEmail().equals(customer.getEmail())) {
+        return false;
+      }
+    }
+    this.addToCustomers(customer);
+    return true;
+// generated end
     // insert your code here
 
   }
@@ -83,7 +90,15 @@ public class Shop {
    */
   public Customer findCustomer(String email) {
     // generated start
-    // generated end
+Customer customer = null;
+    for (Customer c : customers) {
+      if (c.getEmail().equals(email)) {
+        customer = c;
+        break;
+      }
+    }
+    return customer;
+// generated end
     // insert your code here
 
   }
@@ -93,6 +108,12 @@ public class Shop {
    */
   public Article findArticle(String ean) {
     // generated start
+for (Article article : this.getArticles()) {
+      if (article.getEan().equals(ean)) {
+        return article;
+      }
+    }
+    return null;
     // generated end
     // insert your code here
 

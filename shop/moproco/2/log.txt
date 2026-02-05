@@ -1,0 +1,71 @@
+registering dashboard webview provider
+registered dashboard webview provider
+[LLMProcessor] Found method: Article
+[LLMProcessor] Found markers for method Article
+[LLMProcessor] Sending request to Ollama for method: Article
+rejected promise not handled within 1 second: TypeError: Cannot read properties of undefined (reading 'document')
+stack trace: TypeError: Cannot read properties of undefined (reading 'document')
+	at /home/scx/.vscode-oss/extensions/vscjava.vscode-java-test-0.44.0-universal/dist/extension.bundle.js:2:419739
+	at Generator.next (<anonymous>)
+	at a (/home/scx/.vscode-oss/extensions/vscjava.vscode-java-test-0.44.0-universal/dist/extension.bundle.js:2:414995)
+	at runNextTicks (node:internal/process/task_queues:65:5)
+	at process.processImmediate (node:internal/timers:453:9)
+	at process.callbackTrampoline (node:internal/async_hooks:130:17)
+[LLMProcessor] Received response from Ollama (281 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:34:43.302015263Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":11546918267,"load_duration":5580752619,"prompt_eval_count":2977,"prompt_eval_duration":2335024027,"eval_count":82,"eval_duration":3489583527}
+[LLMProcessor] Successfully inserted code for method: Article
+[LLMProcessor] Successfully processed 1 method(s) in Article.java
+[LLMProcessor] Found method: Customer
+[LLMProcessor] Found markers for method Customer
+[LLMProcessor] Found method: placeOrder
+[LLMProcessor] Found markers for method placeOrder
+[LLMProcessor] Sending request to Ollama for method: Customer
+[LLMProcessor] Received response from Ollama (202 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:34:48.746171381Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5159019517,"load_duration":257557305,"prompt_eval_count":3047,"prompt_eval_duration":2186065092,"eval_count":63,"eval_duration":2669341628}
+[LLMProcessor] Successfully inserted code for method: Customer
+[LLMProcessor] Sending request to Ollama for method: placeOrder
+[LLMProcessor] Received response from Ollama (463 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:34:56.270105497Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":7151384111,"load_duration":229756929,"prompt_eval_count":3064,"prompt_eval_duration":2196310930,"eval_count":109,"eval_duration":4660144733}
+[LLMProcessor] Successfully inserted code for method: placeOrder
+[LLMProcessor] Successfully processed 2 method(s) in Customer.java
+[LLMProcessor] Found method: Order
+[LLMProcessor] Found markers for method Order
+[LLMProcessor] Found method: addItem
+[LLMProcessor] Found markers for method addItem
+[LLMProcessor] Found method: totalPrice
+[LLMProcessor] Found markers for method totalPrice
+[LLMProcessor] Sending request to Ollama for method: Order
+[LLMProcessor] Received response from Ollama (43 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:34:59.440452966Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":3008358784,"load_duration":235825321,"prompt_eval_count":3201,"prompt_eval_duration":2323208436,"eval_count":11,"eval_duration":433421283}
+[LLMProcessor] Successfully inserted code for method: Order
+[LLMProcessor] Sending request to Ollama for method: addItem
+[LLMProcessor] Received response from Ollama (269 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:35:04.941658623Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5247283715,"load_duration":244397844,"prompt_eval_count":3222,"prompt_eval_duration":2334240381,"eval_count":62,"eval_duration":2627260922}
+[LLMProcessor] Successfully inserted code for method: addItem
+[LLMProcessor] Sending request to Ollama for method: totalPrice
+[LLMProcessor] Received response from Ollama (160 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:35:09.737714614Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":4442733525,"load_duration":232550448,"prompt_eval_count":3205,"prompt_eval_duration":2349400870,"eval_count":43,"eval_duration":1816178594}
+[LLMProcessor] Successfully inserted code for method: totalPrice
+[LLMProcessor] Successfully processed 3 method(s) in Order.java
+[LLMProcessor] Found method: registerCustomer
+[LLMProcessor] Found markers for method registerCustomer
+[LLMProcessor] Found method: findCustomer
+[LLMProcessor] Found markers for method findCustomer
+[LLMProcessor] Found method: findArticle
+[LLMProcessor] Found markers for method findArticle
+[LLMProcessor] Sending request to Ollama for method: registerCustomer
+[LLMProcessor] Received response from Ollama (211 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:35:14.651861138Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":4647113332,"load_duration":203730212,"prompt_eval_count":3317,"prompt_eval_duration":2461944096,"eval_count":46,"eval_duration":1950016255}
+[LLMProcessor] Successfully inserted code for method: registerCustomer
+[LLMProcessor] Sending request to Ollama for method: findCustomer
+[LLMProcessor] Received response from Ollama (149 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:35:19.151611484Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":4214764469,"load_duration":251289585,"prompt_eval_count":3302,"prompt_eval_duration":2454052415,"eval_count":35,"eval_duration":1477019372}
+[LLMProcessor] Successfully inserted code for method: findCustomer
+[LLMProcessor] Sending request to Ollama for method: findArticle
+[LLMProcessor] Received response from Ollama (140 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:35:23.550141287Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":4223500732,"load_duration":152263440,"prompt_eval_count":3303,"prompt_eval_duration":2484115277,"eval_count":37,"eval_duration":1554955649}
+[LLMProcessor] Successfully inserted code for method: findArticle
+[LLMProcessor] Successfully processed 3 method(s) in Shop.java
+[DEBUG] Total processing time: 52241.822021484375 ms
+[DEBUG] Total processing time: 52.242s
+

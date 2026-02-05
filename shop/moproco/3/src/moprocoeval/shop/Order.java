@@ -73,7 +73,9 @@ public class Order {
    */
   public Order() {
     // generated start
-    // generated end
+java.util.UUID randomUUID = java.util.UUID.randomUUID();
+    this.setOrderID(randomUUID.toString());
+// generated end
     // insert your code here
 
   }
@@ -84,7 +86,15 @@ public class Order {
    */
   public Boolean addItem(OrderItem item) {
     // generated start
-    // generated end
+for (OrderItem existingItem : this.items) {
+      if (existingItem.getArticle() == item.getArticle()) {
+        existingItem.setQuantity(existingItem.getQuantity() + item.getQuantity());
+        return true;
+      }
+    }
+    this.addToItems(item);
+    return true;
+// generated end
     // insert your code here
 
   }
@@ -94,7 +104,12 @@ public class Order {
    */
   public Double totalPrice() {
     // generated start
-    // generated end
+Double total = 0.0;
+    for (OrderItem item : this.getItems()) {
+      total += item.getArticle().getCurrentPrice() * item.getQuantity();
+    }
+    return total;
+// generated end
     // insert your code here
 
   }

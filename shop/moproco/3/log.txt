@@ -1,0 +1,61 @@
+[LLMProcessor] Found method: Article
+[LLMProcessor] Found markers for method Article
+[LLMProcessor] Sending request to Ollama for method: Article
+[LLMProcessor] Received response from Ollama (316 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:41:26.348014763Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":6107853275,"load_duration":263403494,"prompt_eval_count":2977,"prompt_eval_duration":2114909140,"eval_count":86,"eval_duration":3659419174}
+[LLMProcessor] Successfully inserted code for method: Article
+[LLMProcessor] Successfully processed 1 method(s) in Article.java
+[LLMProcessor] Found method: Customer
+[LLMProcessor] Found markers for method Customer
+[LLMProcessor] Found method: placeOrder
+[LLMProcessor] Found markers for method placeOrder
+[LLMProcessor] Sending request to Ollama for method: Customer
+[LLMProcessor] Received response from Ollama (266 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:41:32.190682996Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5643555475,"load_duration":205575228,"prompt_eval_count":3049,"prompt_eval_duration":2186339215,"eval_count":75,"eval_duration":3198091663}
+[LLMProcessor] Successfully inserted code for method: Customer
+[LLMProcessor] Sending request to Ollama for method: placeOrder
+[LLMProcessor] Received response from Ollama (463 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:41:39.441993402Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":7086295505,"load_duration":153466641,"prompt_eval_count":3066,"prompt_eval_duration":2196587491,"eval_count":109,"eval_duration":4669764872}
+[LLMProcessor] Successfully inserted code for method: placeOrder
+[LLMProcessor] Successfully processed 2 method(s) in Customer.java
+[LLMProcessor] Found method: Order
+[LLMProcessor] Found markers for method Order
+[LLMProcessor] Found method: addItem
+[LLMProcessor] Found markers for method addItem
+[LLMProcessor] Found method: totalPrice
+[LLMProcessor] Found markers for method totalPrice
+[LLMProcessor] Sending request to Ollama for method: Order
+[LLMProcessor] Received response from Ollama (104 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:41:43.275022001Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":3613422996,"load_duration":244916329,"prompt_eval_count":3215,"prompt_eval_duration":2334818182,"eval_count":24,"eval_duration":995139321}
+[LLMProcessor] Successfully inserted code for method: Order
+[LLMProcessor] Sending request to Ollama for method: addItem
+[LLMProcessor] Received response from Ollama (269 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:41:48.615378831Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5238998182,"load_duration":151822611,"prompt_eval_count":3236,"prompt_eval_duration":2395545955,"eval_count":62,"eval_duration":2639361297}
+[LLMProcessor] Successfully inserted code for method: addItem
+[LLMProcessor] Sending request to Ollama for method: totalPrice
+[LLMProcessor] Received response from Ollama (165 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:41:53.389179046Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":4536859407,"load_duration":284152096,"prompt_eval_count":3219,"prompt_eval_duration":2351183843,"eval_count":44,"eval_duration":1860427820}
+[LLMProcessor] Successfully inserted code for method: totalPrice
+[LLMProcessor] Successfully processed 3 method(s) in Order.java
+[LLMProcessor] Found method: registerCustomer
+[LLMProcessor] Found markers for method registerCustomer
+[LLMProcessor] Found method: findCustomer
+[LLMProcessor] Found markers for method findCustomer
+[LLMProcessor] Found method: findArticle
+[LLMProcessor] Found markers for method findArticle
+[LLMProcessor] Sending request to Ollama for method: registerCustomer
+[LLMProcessor] Received response from Ollama (211 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:41:58.306839431Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":4624829326,"load_duration":154303428,"prompt_eval_count":3345,"prompt_eval_duration":2468883909,"eval_count":46,"eval_duration":1953867188}
+[LLMProcessor] Successfully inserted code for method: registerCustomer
+[LLMProcessor] Sending request to Ollama for method: findCustomer
+[LLMProcessor] Received response from Ollama (149 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:42:02.726720959Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":4229120578,"load_duration":241116912,"prompt_eval_count":3330,"prompt_eval_duration":2478071719,"eval_count":35,"eval_duration":1476474980}
+[LLMProcessor] Successfully inserted code for method: findCustomer
+[LLMProcessor] Sending request to Ollama for method: findArticle
+[LLMProcessor] Received response from Ollama (145 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:42:07.335623539Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":4343472142,"load_duration":252359724,"prompt_eval_count":3331,"prompt_eval_duration":2493134465,"eval_count":37,"eval_duration":1564099224}
+[LLMProcessor] Successfully inserted code for method: findArticle
+[LLMProcessor] Successfully processed 3 method(s) in Shop.java
+[DEBUG] Total processing time: 47458.808837890625 ms
+[DEBUG] Total processing time: 47.459s
+

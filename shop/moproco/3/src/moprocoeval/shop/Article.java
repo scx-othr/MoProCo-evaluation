@@ -101,7 +101,17 @@ public class Article {
    */
   public Article(String ean, String name, Double price) {
     // generated start
-    // generated end
+// Validate EAN format (13 digits)
+    if (ean == null || ean.length() != 13 || !ean.matches("\\d+")) {
+      throw new IllegalArgumentException("Invalid EAN format");
+    }
+
+    // Set article properties
+    this.setEan(ean);
+    this.setName(name);
+    this.setCurrentPrice(price);
+    this.setItemsInStock(0);
+// generated end
     // insert your code here
 
   }
