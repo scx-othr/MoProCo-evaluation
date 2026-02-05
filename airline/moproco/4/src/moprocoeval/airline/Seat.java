@@ -75,7 +75,16 @@ public abstract class Seat {
    */
   public Reservation reserve(Passenger passenger) {
     // generated start
-    // generated end
+if (this.status != SeatStatus.AVAILABLE) {
+      throw new IllegalArgumentException("Seat is not available");
+    }
+    Reservation reservation = new Reservation();
+    reservation.setPassenger(passenger);
+    reservation.setSeat(this);
+    reservation.setReservationDate(new java.util.Date());
+    this.setStatus(SeatStatus.RESERVED);
+    return reservation;
+// generated end
     // insert your code here
 
   }

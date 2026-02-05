@@ -67,7 +67,15 @@ public class Reservation {
    */
   public void changeSeat(Seat newSeat) {
     // generated start
-    // generated end
+if (newSeat.getStatus() != SeatStatus.AVAILABLE) {
+      throw new java.lang.IllegalArgumentException("The new selected seat is not available");
+    }
+    if (this.seat != null) {
+      this.seat.setStatus(SeatStatus.AVAILABLE);
+    }
+    this.setSeat(newSeat);
+    newSeat.setStatus(SeatStatus.RESERVED);
+// generated end
     // insert your code here
 
   }
@@ -78,7 +86,12 @@ public class Reservation {
    */
   public void cancel() {
     // generated start
-    // generated end
+if (this.seat != null) {
+      this.seat.setStatus(SeatStatus.AVAILABLE);
+    }
+    this.setSeat(null);
+    this.setPassenger(null);
+// generated end
     // insert your code here
 
   }

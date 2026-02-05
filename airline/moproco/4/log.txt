@@ -1,0 +1,39 @@
+[LLMProcessor] Found method: addFlight
+[LLMProcessor] Found markers for method addFlight
+[LLMProcessor] Sending request to Ollama for method: addFlight
+[LLMProcessor] Received response from Ollama (282 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T20:40:01.963138048Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5072671139,"load_duration":265595962,"prompt_eval_count":2847,"prompt_eval_duration":2003490987,"eval_count":65,"eval_duration":2751996543}
+[LLMProcessor] Successfully inserted code for method: addFlight
+[LLMProcessor] Successfully processed 1 method(s) in Airline.java
+[LLMProcessor] Found method: addSeat
+[LLMProcessor] Found markers for method addSeat
+[LLMProcessor] Sending request to Ollama for method: addSeat
+[LLMProcessor] Received response from Ollama (304 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T20:40:07.772600459Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5560643049,"load_duration":212086428,"prompt_eval_count":2916,"prompt_eval_duration":2086924764,"eval_count":76,"eval_duration":3220031016}
+[LLMProcessor] Successfully inserted code for method: addSeat
+[LLMProcessor] Successfully processed 1 method(s) in Flight.java
+[LLMProcessor] Found method: changeSeat
+[LLMProcessor] Found markers for method changeSeat
+[LLMProcessor] Found method: cancel
+[LLMProcessor] Found markers for method cancel
+[LLMProcessor] Sending request to Ollama for method: changeSeat
+[LLMProcessor] Received response from Ollama (290 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T20:40:13.730080356Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5765848363,"load_duration":211215499,"prompt_eval_count":3000,"prompt_eval_duration":2158622852,"eval_count":79,"eval_duration":3353997825}
+[LLMProcessor] Successfully inserted code for method: changeSeat
+[LLMProcessor] Sending request to Ollama for method: cancel
+[LLMProcessor] Received response from Ollama (136 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T20:40:18.008409623Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":4092569902,"load_duration":248735940,"prompt_eval_count":2979,"prompt_eval_duration":2173522777,"eval_count":39,"eval_duration":1636937757}
+[LLMProcessor] Successfully inserted code for method: cancel
+[LLMProcessor] Successfully processed 2 method(s) in Reservation.java
+[LLMProcessor] Found method: reserve
+[LLMProcessor] Found markers for method reserve
+[LLMProcessor] Sending request to Ollama for method: reserve
+[LLMProcessor] Received response from Ollama (363 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T20:40:23.979672895Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5808050233,"load_duration":195706514,"prompt_eval_count":3116,"prompt_eval_duration":2276755998,"eval_count":77,"eval_duration":3281674315}
+[LLMProcessor] Successfully inserted code for method: reserve
+[LLMProcessor] Successfully processed 1 method(s) in Seat.java
+[DEBUG] Total processing time: 27384.822021484375 ms
+[DEBUG] Total processing time: 27.385s
+registering dashboard webview provider
+registered dashboard webview provider
+

@@ -57,7 +57,13 @@ public class Airline {
    */
   public void addFlight(Flight flight) {
     // generated start
-    // generated end
+for (Flight existingFlight : this.flights) {
+      if (existingFlight.getFlightNumber().equals(flight.getFlightNumber())) {
+        throw new IllegalArgumentException("Flight with ID " + flight.getFlightNumber() + " already exists");
+      }
+    }
+    this.addToFlights(flight);
+// generated end
     // insert your code here
 
   }

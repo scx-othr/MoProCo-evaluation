@@ -84,7 +84,14 @@ public class Flight {
    */
   public void addSeat(Seat seat) {
     // generated start
-    // generated end
+for (Seat existingSeat : this.seats) {
+      if (existingSeat.getSeatNumber().equals(seat.getSeatNumber())) {
+        throw new java.lang.IllegalArgumentException("Seat with number " + seat.getSeatNumber() + " already exists");
+      }
+    }
+    this.addToSeats(seat);
+    seat.setStatus(SeatStatus.AVAILABLE);
+// generated end
     // insert your code here
 
   }
