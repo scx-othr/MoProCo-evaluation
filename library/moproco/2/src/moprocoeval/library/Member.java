@@ -91,7 +91,21 @@ public class Member {
    */
   public Loan borrowCopy(Copy copy) {
     // generated start
-    // generated end
+if (copy.getStatus() != CopyStatus.AVAILABLE) {
+      return null;
+    }
+    Loan loan = new Loan();
+    loan.setLoanDate(new java.util.Date());
+    java.util.Calendar cal = java.util.Calendar.getInstance();
+    cal.setTime(loan.getLoanDate());
+    cal.add(java.util.Calendar.WEEK_OF_YEAR, 6);
+    loan.setDueDate(cal.getTime());
+    loan.setClosed(false);
+    this.addToLoans(loan);
+    copy.addToLoans(loan);
+    copy.setStatus(CopyStatus.ON_LOAN);
+    return loan;
+// generated end
     // insert your code here
 
   }

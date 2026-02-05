@@ -93,7 +93,14 @@ public class Loan {
    */
   public void returnCopy(Copy copy) {
     // generated start
-    // generated end
+if (!this.closed) {
+      this.setClosed(true);
+      this.setReturnDate(new java.util.Date());
+      this.getCopy().setStatus(CopyStatus.AVAILABLE);
+    } else {
+      throw new java.lang.IllegalStateException("Loan is already closed");
+    }
+// generated end
     // insert your code here
 
   }

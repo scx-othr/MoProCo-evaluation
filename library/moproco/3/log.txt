@@ -1,0 +1,30 @@
+[LLMProcessor] Found method: registerMember
+[LLMProcessor] Found markers for method registerMember
+[LLMProcessor] Found method: addBook
+[LLMProcessor] Found markers for method addBook
+[LLMProcessor] Sending request to Ollama for method: registerMember
+[LLMProcessor] Received response from Ollama (254 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:09:02.470224634Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5146814929,"load_duration":261094944,"prompt_eval_count":3005,"prompt_eval_duration":2167779672,"eval_count":63,"eval_duration":2668423109}
+[LLMProcessor] Successfully inserted code for method: registerMember
+[LLMProcessor] Sending request to Ollama for method: addBook
+[LLMProcessor] Received response from Ollama (337 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:09:08.703116657Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":6046777083,"load_duration":244200572,"prompt_eval_count":3005,"prompt_eval_duration":2157876394,"eval_count":84,"eval_duration":3578755121}
+[LLMProcessor] Successfully inserted code for method: addBook
+[LLMProcessor] Successfully processed 2 method(s) in Library.java
+[LLMProcessor] Found method: returnCopy
+[LLMProcessor] Found markers for method returnCopy
+[LLMProcessor] Sending request to Ollama for method: returnCopy
+[LLMProcessor] Received response from Ollama (247 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:09:14.139660442Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5118693919,"load_duration":244013613,"prompt_eval_count":3154,"prompt_eval_duration":2289849811,"eval_count":60,"eval_duration":2542259504}
+[LLMProcessor] Successfully inserted code for method: returnCopy
+[LLMProcessor] Successfully processed 1 method(s) in Loan.java
+[LLMProcessor] Found method: borrowCopy
+[LLMProcessor] Found markers for method borrowCopy
+[LLMProcessor] Sending request to Ollama for method: borrowCopy
+[LLMProcessor] Received response from Ollama (566 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:09:23.478512366Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":9142998096,"load_duration":186156475,"prompt_eval_count":3247,"prompt_eval_duration":2391324887,"eval_count":151,"eval_duration":6482097943}
+[LLMProcessor] Successfully inserted code for method: borrowCopy
+[LLMProcessor] Successfully processed 1 method(s) in Member.java
+[DEBUG] Total processing time: 26544.73291015625 ms
+[DEBUG] Total processing time: 26.545s
+

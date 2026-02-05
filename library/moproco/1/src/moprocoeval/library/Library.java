@@ -73,7 +73,13 @@ public class Library {
    */
   public void registerMember(Member member) {
     // generated start
-    // generated end
+for (Member existingMember : this.members) {
+      if (existingMember.getMemberID().equals(member.getMemberID())) {
+        throw new IllegalArgumentException("Member with ID " + member.getMemberID() + " already exists");
+      }
+    }
+    this.addToMembers(member);
+// generated end
     // insert your code here
 
   }
@@ -84,7 +90,13 @@ public class Library {
    */
   public void addBook(Book book) {
     // generated start
-    // generated end
+for (Book existingBook : this.books) {
+      if (existingBook.getIsbn().equals(book.getIsbn())) {
+        throw new IllegalArgumentException("Book with ISBN " + book.getIsbn() + " already exists");
+      }
+    }
+    this.addToBooks(book);
+// generated end
     // insert your code here
 
   }

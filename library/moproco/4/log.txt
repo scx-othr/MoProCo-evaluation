@@ -1,0 +1,35 @@
+rejected promise not handled within 1 second: TypeError: Cannot read properties of undefined (reading 'document')
+stack trace: TypeError: Cannot read properties of undefined (reading 'document')
+	at /home/scx/.vscode-oss/extensions/vscjava.vscode-java-test-0.44.0-universal/dist/extension.bundle.js:2:419739
+	at Generator.next (<anonymous>)
+	at a (/home/scx/.vscode-oss/extensions/vscjava.vscode-java-test-0.44.0-universal/dist/extension.bundle.js:2:414995)
+[LLMProcessor] Found method: registerMember
+[LLMProcessor] Found markers for method registerMember
+[LLMProcessor] Found method: addBook
+[LLMProcessor] Found markers for method addBook
+[LLMProcessor] Sending request to Ollama for method: registerMember
+[LLMProcessor] Received response from Ollama (280 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:10:35.523448218Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5216547724,"load_duration":254763781,"prompt_eval_count":3005,"prompt_eval_duration":2166489448,"eval_count":65,"eval_duration":2752456836}
+[LLMProcessor] Successfully inserted code for method: registerMember
+[LLMProcessor] Sending request to Ollama for method: addBook
+[LLMProcessor] Received response from Ollama (337 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:10:41.868673305Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":6026266756,"load_duration":251738386,"prompt_eval_count":3005,"prompt_eval_duration":2167061669,"eval_count":84,"eval_duration":3565827588}
+[LLMProcessor] Successfully inserted code for method: addBook
+[LLMProcessor] Successfully processed 2 method(s) in Library.java
+[LLMProcessor] Found method: returnCopy
+[LLMProcessor] Found markers for method returnCopy
+[LLMProcessor] Sending request to Ollama for method: returnCopy
+[LLMProcessor] Received response from Ollama (247 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:10:47.172311153Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5127425443,"load_duration":232512442,"prompt_eval_count":3156,"prompt_eval_duration":2306196736,"eval_count":60,"eval_duration":2546363613}
+[LLMProcessor] Successfully inserted code for method: returnCopy
+[LLMProcessor] Successfully processed 1 method(s) in Loan.java
+[LLMProcessor] Found method: borrowCopy
+[LLMProcessor] Found markers for method borrowCopy
+[LLMProcessor] Sending request to Ollama for method: borrowCopy
+[LLMProcessor] Received response from Ollama (471 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:10:55.55486773Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":8222152136,"load_duration":221870452,"prompt_eval_count":3249,"prompt_eval_duration":2408253367,"eval_count":129,"eval_duration":5532258088}
+[LLMProcessor] Successfully inserted code for method: borrowCopy
+[LLMProcessor] Successfully processed 1 method(s) in Member.java
+[DEBUG] Total processing time: 25593.43310546875 ms
+[DEBUG] Total processing time: 25.594s
+

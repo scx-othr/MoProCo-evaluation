@@ -1,0 +1,34 @@
+registering dashboard webview provider
+registered dashboard webview provider
+[LLMProcessor] Found method: registerMember
+[LLMProcessor] Found markers for method registerMember
+[LLMProcessor] Found method: addBook
+[LLMProcessor] Found markers for method addBook
+[LLMProcessor] Sending request to Ollama for method: registerMember
+[LLMProcessor] Received response from Ollama (244 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:06:55.277660475Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":10677825552,"load_duration":5624062913,"prompt_eval_count":3005,"prompt_eval_duration":2342626461,"eval_count":60,"eval_duration":2541794378}
+[LLMProcessor] Successfully inserted code for method: registerMember
+[LLMProcessor] Sending request to Ollama for method: addBook
+[LLMProcessor] Received response from Ollama (337 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:07:01.39858697Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":5948003517,"load_duration":178981104,"prompt_eval_count":3005,"prompt_eval_duration":2146492361,"eval_count":84,"eval_duration":3572033145}
+[LLMProcessor] Successfully inserted code for method: addBook
+[LLMProcessor] Successfully processed 2 method(s) in Library.java
+[LLMProcessor] Found method: returnCopy
+[LLMProcessor] Found markers for method returnCopy
+[LLMProcessor] Sending request to Ollama for method: returnCopy
+[LLMProcessor] Received response from Ollama (237 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:07:06.545169535Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":4978250465,"load_duration":228749660,"prompt_eval_count":3151,"prompt_eval_duration":2281357222,"eval_count":57,"eval_duration":2419470076}
+[LLMProcessor] Successfully inserted code for method: returnCopy
+[LLMProcessor] Successfully processed 1 method(s) in Loan.java
+[LLMProcessor] Found method: borrowCopy
+[LLMProcessor] Found markers for method borrowCopy
+[LLMProcessor] Sending request to Ollama for method: borrowCopy
+[LLMProcessor] Received response from Ollama (471 chars)
+{"model":"devstral-small-2:24b","created_at":"2026-02-05T21:07:14.961999379Z","response":"","done":true,"done_reason":"stop","context":[],"total_duration":8206957241,"load_duration":250807367,"prompt_eval_count":3241,"prompt_eval_duration":2372410591,"eval_count":129,"eval_duration":5521781857}
+[LLMProcessor] Successfully inserted code for method: borrowCopy
+[LLMProcessor] Successfully processed 1 method(s) in Member.java
+[DEBUG] Total processing time: 30614.299072265625 ms
+[DEBUG] Total processing time: 30.615s
+registering dashboard webview provider
+registered dashboard webview provider
+

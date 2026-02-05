@@ -73,7 +73,13 @@ public class Library {
    */
   public void registerMember(Member member) {
     // generated start
-    // generated end
+for (Member m : this.members) {
+      if (m.getMemberID().equals(member.getMemberID())) {
+        throw new java.lang.IllegalArgumentException("Member with ID " + member.getMemberID() + " already exists");
+      }
+    }
+    this.addToMembers(member);
+// generated end
     // insert your code here
 
   }
@@ -84,7 +90,16 @@ public class Library {
    */
   public void addBook(Book book) {
     // generated start
-    // generated end
+if (book == null) {
+      throw new IllegalArgumentException("Book cannot be null");
+    }
+    for (Book existingBook : this.books) {
+      if (existingBook.getIsbn().equals(book.getIsbn())) {
+        throw new IllegalArgumentException("Book with ISBN " + book.getIsbn() + " already exists");
+      }
+    }
+    this.addToBooks(book);
+// generated end
     // insert your code here
 
   }
