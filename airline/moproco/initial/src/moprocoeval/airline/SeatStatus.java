@@ -1,6 +1,6 @@
 package moprocoeval.airline;
 
 public enum SeatStatus {
-  AVALIABLE,
+  AVAILABLE,
   RESERVED
 }

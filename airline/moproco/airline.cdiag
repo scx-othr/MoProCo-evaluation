@@ -4,7 +4,7 @@ package moprocoeval {
     primitive Date
     
     package airline {
-        enum SeatStatus { AVALIABLE, RESERVED }
+        enum SeatStatus { AVAILABLE, RESERVED }
 
         class Airline {
             public name : String
