@@ -73,7 +73,9 @@ public class Order {
    */
   public Order() {
     // generated start
-orderID = java.util.UUID.randomUUID().toString();
+//  -- manual fix required for test success. Replaced commented line with line below.
+//  java.util.UUID.randomUUID().toString();
+    orderID = java.util.UUID.randomUUID().toString();
 // generated end
     // insert your code here
 

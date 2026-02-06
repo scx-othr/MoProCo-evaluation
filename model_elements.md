@@ -1,5 +1,5 @@
 # Model elements used
-manually counted 
+manually counted from `.puml` files of each case study
 
 ## airline
 
@@ -18,7 +18,8 @@ manually counted
 - 8 branches
 - 18 action nodes
 - 6 OCL expressions
-74 elements of 13 types
+
+**Total**: 74 elements of 13 types
 
 ### MoProCo specification
 - 2 packages
@@ -32,7 +33,8 @@ manually counted
 - 4 associations
 - 2 extensions
 - 12 lines of natural language specification
-47 elements of 11 types
+
+**Total**: 47 elements of 11 types
 
 ## library
 
@@ -49,7 +51,8 @@ manually counted
 - 10 branches
 - 19 action nodes
 - 9 OCL expressions
-83 elements of 12 types
+
+**Total**: 83 elements of 12 types
 
 ### MoProCo specification
 - 2 packages
@@ -61,7 +64,8 @@ manually counted
 - 2 literals
 - 5 associations
 - 10 lines of natural language specification
-45 elements of 9 types
+
+**Total**: 45 elements of 9 types
 
 ## shop
 
@@ -79,7 +83,8 @@ manually counted
 - 1 loop partition
 - 1 loop comprehension
 - 20 OCL expressions
-123 elements of 13 types
+
+**Total**: 123 elements of 13 types
 
 ### MoProCo specification
 - 2 packages
@@ -90,4 +95,5 @@ manually counted
 - 6 operations
 - 5 associations
 - 15 lines of natural language specification
-49 elements of 8 types
+
+**Total**: 49 elements of 8 types

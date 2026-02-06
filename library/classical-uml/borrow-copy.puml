@@ -7,7 +7,7 @@ if (copy.status <> CopyStatus::Available) then ([true])
   stop
 else ([false])
   :l := new Loan;
-  :l.book := b;
+  :l.copy := copy;
   :l.member := this;
   :l.loanDate := now();
   :l.dueDate := now().plusMonths(6);

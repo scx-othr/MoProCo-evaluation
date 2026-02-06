@@ -81,6 +81,8 @@ if (this.status != SeatStatus.AVAILABLE) {
     Reservation reservation = new Reservation();
     reservation.setPassenger(passenger);
     reservation.setSeat(this);
+//  -- manual fix required for compilation success. Replaced commented line with line below.
+//  reservation.setReservationDate(new Date());
     reservation.setReservationDate(new java.util.Date());
     this.setStatus(SeatStatus.RESERVED);
     return reservation;
