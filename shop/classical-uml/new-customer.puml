@@ -4,8 +4,8 @@ title Customer::Customer(name : String, email : String)
 start
 if (not email.isValidEmail()) then (true)
   :raise("Invalid email address");
+  stop
 endif
-
 :self.name := name;
 :self.email := email;
 stop

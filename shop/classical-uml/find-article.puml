@@ -3,10 +3,11 @@ title Shop::findArticle(ean : String) : Article
 
 start
 :matches := self.articles->select(x | x.ean = ean);
-
 if (matches->isEmpty()) then ([true])
   :raise("Article not found");
+  stop
 else (false)
   :return matches->first;
+  stop
 endif
 @enduml

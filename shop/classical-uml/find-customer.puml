@@ -3,10 +3,11 @@ title Shop::findCustomer(email : String) : Customer
 
 start
 :matches := self.customers->select(x | x.email = email);
-
 if (matches->isEmpty()) then (true)
   :raise("Customer not found");
+  stop
 else (false)
   :return matches->first();
+  stop
 endif
 @enduml
