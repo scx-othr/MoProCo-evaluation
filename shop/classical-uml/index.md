@@ -1,4 +1,4 @@
-# Airline
+# Shop
 
 ## Class diagram
 
