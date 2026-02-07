@@ -13,5 +13,3 @@
 ![borrowCopy](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/scx-othr/MoProCo-evaluation/refs/heads/main/library/classical-uml/borrow-copy.puml)
 
 ![returnCopy](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/scx-othr/MoProCo-evaluation/refs/heads/main/library/classical-uml/return-copy.puml)
-
-![close](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/scx-othr/MoProCo-evaluation/refs/heads/main/library/classical-uml/close.puml)
