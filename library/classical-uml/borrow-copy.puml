@@ -10,7 +10,7 @@ else ([false])
   :l.copy := copy;
   :l.member := this;
   :l.loanDate := now();
-  :l.dueDate := now().plusMonths(6);
+  :l.dueDate := now().plusWeeks(6);
   :copy.status := CopyStatus::OnLoan;
   :l.closed := false;
   :return l;
