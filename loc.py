@@ -48,6 +48,16 @@ if __name__ == "__main__":
     for casestudy in ["airline", "library", "shop"]:
         print("## " + casestudy)
         print()
+        print("### MoProCo model (initial)")
+        print(count_path(Path(casestudy + "/moproco/" + casestudy + ".cdiag")))
+        print()
+        print("### MoProCo generated code")
+        for run in [str(i) for i in range(1, 6)]:
+            print("- run " + run + ": " + str(count_path(Path(casestudy + "/moproco/" + run + "/src"))))
+        print()        
+        print("### Classical UML models")
+        print(count_path(Path(casestudy + "/classical-uml")))
+        print()
         print("### Black-box LLM prompt")
         print(count_path(Path(casestudy + "/blackbox-llm/prompt.md")))
         print()
@@ -55,14 +65,7 @@ if __name__ == "__main__":
         for run in [str(i) for i in range(1, 6)]:
             print("- run " + run + ": " + str(count_path(Path(casestudy + "/blackbox-llm/" + run + "/src"))))        
         print()
-        print("### Classical UML models")
-        print(count_path(Path(casestudy + "/classical-uml")))
-        print()
-        print("### MoProCo specification file")
-        print(count_path(Path(casestudy + "/moproco/" + casestudy + ".cdiag")))
-        print()
-        print("### MoProCo generated code")
-        for run in [str(i) for i in range(1, 6)]:
-            print("- run " + run + ": " + str(count_path(Path(casestudy + "/moproco/" + run + "/src"))))
+        print("### MoProCo model (with back-propagated method bodies)")
+        print(count_path(Path(casestudy + "/moproco/1/" + casestudy + ".cdiag")))
         print()
         print()

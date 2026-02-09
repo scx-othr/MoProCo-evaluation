@@ -1,0 +1,115 @@
+package moprocoeval {
+    primitive Boolean
+    primitive String
+    primitive Decimal
+    primitive Integer
+    primitive Date
+
+    package library {
+        enum CopyStatus { AVAILABLE, ON_LOAN }
+
+        class Library {
+            public registerMember(member : Member) {
+                spec "If a member with the specified ID already exists, raise an exception.
+                    Otherwise add the member to the library."
+                impl java << for (Member existingMember : this.members) {
+                    if (existingMember.getMemberID().equals(member.getMemberID())) {
+                        throw new IllegalArgumentException("Member with ID " + member.getMemberID() + " already exists");
+                    }
+                }
+                this.addToMembers(member); >>
+            }
+            public addBook(book : Book) {
+                spec "If a book with the specified ISBN already exists, raise an exception.
+                    Otherwise add the book to the library."
+                impl java << for (Book existingBook : this.books) {
+                    if (existingBook.getIsbn().equals(book.getIsbn())) {
+                        throw new IllegalArgumentException("Book with ISBN " + book.getIsbn() + " already exists");
+                    }
+                }
+                this.addToBooks(book); >>
+            }
+        }
+
+        class Book {
+            public isbn : String
+            public title : String
+            public author : String
+        }
+
+        class Member {
+            public memberID : String
+            public name : String
+
+            public borrowCopy(copy : Copy) : Loan {
+                spec "If the copy is not available, reject the request.
+                    Otherwise create a new loan, set its loan date to the current date and the due date to six weeks from today.
+                    Associate the loan with both the member and the copy.
+                    Set the loan to non-closed, the copy's status to \"on loan\" and return the copy."
+                impl java << if (copy.getStatus() != CopyStatus.AVAILABLE) {
+                    return null;
+                }
+                Loan loan = new Loan();
+                loan.setLoanDate(new java.util.Date());
+                java.util.Calendar cal = java.util.Calendar.getInstance();
+                cal.setTime(loan.getLoanDate());
+                cal.add(java.util.Calendar.WEEK_OF_YEAR, 6);
+                loan.setDueDate(cal.getTime());
+                loan.setClosed(false);
+                this.addToLoans(loan);
+                copy.addToLoans(loan);
+                copy.setStatus(CopyStatus.ON_LOAN);
+                return loan; >>
+            }
+        }
+
+        class Copy {
+            public copyId : String
+            public status : CopyStatus
+        }
+
+        class Loan {
+            public loanDate : Date
+            public dueDate : Date
+            public returnDate : Date [0..1]
+            public closed : Boolean
+
+            public returnCopy(copy : Copy) {
+                spec "If the loan is open, set it closed, set the return date to now, and set the copy's status to available.
+                    Otherwise, raise an exception."
+                impl java << if (!this.closed) {
+                    this.setClosed(true);
+                    this.setReturnDate(new java.util.Date());
+                    this.getCopy().setStatus(CopyStatus.AVAILABLE);
+                } else {
+                    throw new IllegalStateException("Loan is already closed");
+                } >>
+            }
+        }
+
+        assoc hasMembers {
+            public libraries : Library [1..-1]
+            public members : Member [0..-1] shared
+        }
+
+        assoc hasBooks {
+            public library : Library [1..1]
+            public books : Book [0..-1]
+        }
+
+        assoc hasCopies {
+            public book : Book [1..1]
+            public copies : Copy [0..-1] composite
+        }
+
+        assoc hasLoans {
+            public member : Member [1..1]
+            public loans : Loan [0..-1] shared
+        }
+
+        assoc isBorrowedBy {
+            public copy : Copy [1..1]
+            public loans : Loan [0..-1] shared 
+        }
+    }
+}

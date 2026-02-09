@@ -1,0 +1,118 @@
+package moprocoeval {
+    primitive String
+    primitive Integer
+    primitive Date
+    
+    package airline {
+        enum SeatStatus { AVAILABLE, RESERVED }
+
+        class Airline {
+            public name : String
+
+            public addFlight(flight : Flight) {
+                spec "If a flight with the specified ID already exists, raise an exception.
+                    Otherwise add the flight to the airline."
+                impl java << for (Flight existingFlight : this.flights) {
+                    if (existingFlight.getFlightNumber().equals(flight.getFlightNumber())) {
+                        throw new java.lang.IllegalArgumentException("Flight with ID " + flight.getFlightNumber() + " already exists");
+                    }
+                }
+                this.addToFlights(flight); >>
+            }
+        }
+
+        class Flight {
+            public flightNumber : String
+            public date : Date
+
+            public addSeat(seat : Seat) {
+                spec "If a seat with the given seat number already exists, raise an exception.
+                    Otherwise add the seat to the flight and set the seat's status to available."
+                impl java << for (Seat existingSeat : this.seats) {
+                    if (existingSeat.getSeatNumber().equals(seat.getSeatNumber())) {
+                        throw new java.lang.IllegalArgumentException("Seat with number " + seat.getSeatNumber() + " already exists");
+                    }
+                }
+                this.addToSeats(seat);
+                seat.setStatus(SeatStatus.AVAILABLE); >>
+            }
+        }
+
+        abstract class Seat {
+            public seatNumber : String
+            public status : SeatStatus
+
+            public reserve(passenger : Passenger) : Reservation {
+                spec "If the seat is not available, raise an exception.
+                    Otherwise create a new reservation and associate it with the current passenger and the provided seat.
+                    Set the reservation date to now.
+                    Finally, set the seat's status to reserved and return the reservation."
+                impl java << if (this.status != SeatStatus.AVAILABLE) {
+                    throw new java.lang.IllegalArgumentException("Seat is not available");
+                }
+                Reservation reservation = new Reservation();
+                reservation.setPassenger(passenger);
+                reservation.setSeat(this);
+                reservation.setReservationDate(new java.util.Date());
+                this.setStatus(SeatStatus.RESERVED);
+                return reservation; >>
+            }
+        }
+
+        class EconomySeat extends Seat { }
+
+        class BusinessSeat extends Seat {
+            public legroomInches : Integer
+        }
+
+        class Passenger {
+            public passengerId : String
+            public name : String
+        }
+
+        class Reservation {
+            public reservationDate : Date
+            public changeSeat(newSeat : Seat) {
+                spec "If the new selected seat is not available, raise an exception.
+                    Otherwise set the status of the reservation's current seat to available, associate the reservation with the new seat and set the new seat's status to reserved."
+                impl java << if (newSeat.getStatus() != SeatStatus.AVAILABLE) {
+                    throw new java.lang.IllegalArgumentException("The new selected seat is not available");
+                }
+                if (this.seat != null) {
+                    this.seat.setStatus(SeatStatus.AVAILABLE);
+                }
+                this.setSeat(newSeat);
+                newSeat.setStatus(SeatStatus.RESERVED); >>
+            }
+            public cancel() {
+                spec "Set the status of the reservation's seat to available.
+                    Remove the associations to the seat and to the passenger."
+                impl java << if (this.seat != null) {
+                    this.seat.setStatus(SeatStatus.AVAILABLE);
+                }
+                this.setSeat(null);
+                this.setPassenger(null); >>
+            }
+        }
+
+        assoc hasFlights {
+            public airline : Airline [1..1]
+            public flights : Flight [0..-1] composite
+        }
+
+        assoc hasSeats {
+            public flight : Flight [1..1]
+            public seats : Seat [0..-1] composite
+        }
+
+        assoc isReserved {
+            public seat : Seat [1..1]
+            public reservation : Reservation [0..1] shared
+        }
+
+        assoc hasReservations {
+            public passenger : Passenger [1..1]
+            public reservations : Reservation [0..-1] 
+        }
+    }
+}
