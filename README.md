@@ -79,7 +79,7 @@ ${context}
 
 ## Artifacts
 
-For each of the case studies, four types of artifacts have been created:
+For each of the case studies, five types of artifacts have been created:
 - **Classical UML diagrams** created with PlantUML. One class diagram per case study, plus one additional activity diagram per operation.
 - **Black-box LLM prompts and code generated from them (five runs)**. The LLM prompts reflect the structure and behavior of the models for each case study. The runs were executed as separate prompts to OpenWebUI. We record the response, usage data, and additional observations for each run.
 - **MoProCo models and code generated from them (five runs)**. The classical UML model structure has been replicated. Behavior has been added as natural language prompts. We record the output of the first, deterministic phase, as well as the completed source code, usage data, and additional observations for each run of the second, LLM-based phase of the generation process.

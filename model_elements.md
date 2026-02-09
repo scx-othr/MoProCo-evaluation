@@ -81,7 +81,7 @@ manually counted from `.puml` files of each case study
 - 12 branches
 - 29 action nodes
 - 1 loop partition
-- 1 loop comprehension
+- 1 loop condition
 - 20 OCL expressions
 
 **Total**: 123 elements of 13 types
