@@ -109,6 +109,10 @@ Generative AI (`gpt-oss:120b-cloud` via Ollama and OpenWebUI) has been utilized 
 - The creation of evaluation scripts (`loc.py` and `variance.py`)
 - The generation of test cases for the three case studies (using the intermediate Java code, not containing completed method bodies, as input)
 
+## License
+
+The data contained in this repository is released under a Creative Commons license. See [LICENSE](LICENSE).
+
 ## Contact
 
 [Felix Schwägerl](mailto:felix.schwaegerl@oth-regensburg.de), OTH Regensburg  
