@@ -14,7 +14,7 @@ package moprocoeval {
                 spec "Return the customer matching the provided email address."
             }
             public findArticle(ean : String) : Article {
-                spec "Return the article mathing the provided ean."
+                spec "Return the article matching the provided ean."
             }
         }
 

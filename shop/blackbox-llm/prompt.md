@@ -35,7 +35,7 @@ Otherwise add the customer and return true.
 Return the customer matching the provided email address.
 
 ## Behavior: Find article
-Return the article mathing the provided ean.
+Return the article matching the provided ean.
 
 ## Constructor Behavior: Customer
 Create a new Customer with given name and email.
