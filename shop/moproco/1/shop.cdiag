@@ -9,13 +9,13 @@ package moprocoeval {
             public registerCustomer(customer : Customer) : Boolean {
                 spec "If a customer with the same email already exists, do not add and return false.
                     Otherwise add the customer and return true."
-                impl java << // Validate email format
-                if (email == null || !email.matches("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-                    throw new IllegalArgumentException("Invalid email address");
+                impl java << for (Customer existingCustomer : this.customers) {
+                    if (existingCustomer.getEmail().equals(customer.getEmail())) {
+                        return false;
+                    }
                 }
-
-                this.name = name;
-                this.email = email; >>
+                this.addToCustomers(customer);
+                return true; >>
             }
             public findCustomer(email : String) : Customer {
                 spec "Return the customer matching the provided email address."     
@@ -119,7 +119,6 @@ package moprocoeval {
                 if (ean == null || ean.length() != 13 || !ean.matches("\\d{13}")) {
                     throw new IllegalArgumentException("Invalid EAN code");
                 }
-
                 this.ean = ean;
                 this.name = name;
                 this.currentPrice = price;
