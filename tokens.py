@@ -2,12 +2,12 @@
 import sys
 from pathlib import Path
 
-def eval_count(path):
+def count(path, property):
     result = 0
     with open(path, encoding="utf-8", errors="ignore") as f:
         for line in f.readlines():
-            if "\"eval_count\"" in line:
-                result += int(line.split('"eval_count":')[1].split(',')[0])
+            if f"\"{property}\"" in line:
+                result += int(line.split(f"\"{property}\":")[1].split(',')[0])
     return result
 
 if __name__ == "__main__":
@@ -20,10 +20,20 @@ if __name__ == "__main__":
         print("### Black-box LLM code generation: generated tokens")
         for run in [str(i) for i in range(1, 6)]:
             path = Path(casestudy + "/blackbox-llm/" + run + "/usage.json")
-            print("- run " + run + ": " + str(eval_count(path)))
+            print("- run " + run + ": " + str(count(path, "eval_count")))
         print()
         print("### MoProCo code generation (LLM phase): generated tokens")
         for run in [str(i) for i in range(1, 6)]:
             path = Path(casestudy + "/moproco/" + run + "/log.txt")
-            print("- run " + run + ": " + str(eval_count(path)))
-        print()     
+            print("- run " + run + ": " + str(count(path, "eval_count")))
+        print()
+        print("### Black-box LLM code generation: consumed tokens")
+        for run in [str(i) for i in range(1, 6)]:
+            path = Path(casestudy + "/blackbox-llm/" + run + "/usage.json")
+            print("- run " + run + ": " + str(count(path, "prompt_eval_count")))
+        print()
+        print("### MoProCo code generation (LLM phase): consumed tokens")
+        for run in [str(i) for i in range(1, 6)]:
+            path = Path(casestudy + "/moproco/" + run + "/log.txt")
+            print("- run " + run + ": " + str(count(path, "prompt_eval_count")))
+        print()
