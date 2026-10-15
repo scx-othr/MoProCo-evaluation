@@ -17,13 +17,13 @@ if __name__ == "__main__":
     for casestudy in ["airline", "library", "shop"]:
         print("## " + casestudy)
         print()
-        print("### Black-box LLM code generation: runtime [s]")
-        for run in [str(i) for i in range(1, 6)]:
-            path = Path(casestudy + "/blackbox-llm/" + run + "/usage.json")
-            print("- run " + run + ": " + str(runtime(path)))
-        print()
-        print("### MoProCo code generation (LLM phase): runtime [s]")
+        print("### MoProCo code generation (LLM phase) (M4.1): runtime [s]")
         for run in [str(i) for i in range(1, 6)]:
             path = Path(casestudy + "/moproco/" + run + "/log.txt")
             print("- run " + run + ": " + str(runtime(path)))
         print()     
+        print("### Black-box LLM code generation (M4.2): runtime [s]")
+        for run in [str(i) for i in range(1, 6)]:
+            path = Path(casestudy + "/blackbox-llm/" + run + "/usage.json")
+            print("- run " + run + ": " + str(runtime(path)))
+        print()

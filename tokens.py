@@ -17,23 +17,23 @@ if __name__ == "__main__":
     for casestudy in ["airline", "library", "shop"]:
         print("## " + casestudy)
         print()
-        print("### Black-box LLM code generation: generated tokens")
-        for run in [str(i) for i in range(1, 6)]:
-            path = Path(casestudy + "/blackbox-llm/" + run + "/usage.json")
-            print("- run " + run + ": " + str(count(path, "eval_count")))
-        print()
-        print("### MoProCo code generation (LLM phase): generated tokens")
+        print("### MoProCo code generation (LLM phase): generated tokens (M5.1)")
         for run in [str(i) for i in range(1, 6)]:
             path = Path(casestudy + "/moproco/" + run + "/log.txt")
             print("- run " + run + ": " + str(count(path, "eval_count")))
         print()
-        print("### Black-box LLM code generation: consumed tokens")
+        print("### Black-box LLM code generation: generated tokens (M5.2)")
         for run in [str(i) for i in range(1, 6)]:
             path = Path(casestudy + "/blackbox-llm/" + run + "/usage.json")
+            print("- run " + run + ": " + str(count(path, "eval_count")))
+        print()
+        print("### MoProCo code generation (LLM phase): consumed tokens (M5.3)")
+        for run in [str(i) for i in range(1, 6)]:
+            path = Path(casestudy + "/moproco/" + run + "/log.txt")
             print("- run " + run + ": " + str(count(path, "prompt_eval_count")))
         print()
-        print("### MoProCo code generation (LLM phase): consumed tokens")
+        print("### Black-box LLM code generation: consumed tokens (M5.4)")
         for run in [str(i) for i in range(1, 6)]:
-            path = Path(casestudy + "/moproco/" + run + "/log.txt")
+            path = Path(casestudy + "/blackbox-llm/" + run + "/usage.json")
             print("- run " + run + ": " + str(count(path, "prompt_eval_count")))
         print()

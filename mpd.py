@@ -63,15 +63,15 @@ if __name__ == "__main__":
     for casestudy in ["airline", "library", "shop"]:
         print("## " + casestudy)
         print()
-        print("### Black-box LLM generated code")
-        blackbox_roots = [casestudy + "/blackbox-llm/" + str(i) + "/src" for i in range(1, 6)]
-        blackbox_mpd, blackbox_diffs = compute_pairwise_diff(blackbox_roots)
-        print("MPD:", "{:.4f}".format(blackbox_mpd) + "  ")
-        print("Pairwise diffs:", ["{:.4f}".format(d) for d in blackbox_diffs])
-        print()
-        print("### MoProCo generated code")
+        print("### MoProCo generated code (M6.1)")
         moproco_roots = [casestudy + "/moproco/" + str(i) + "/src" for i in range(1, 6)]
         moproco_mpd, moproco_diffs = compute_pairwise_diff(moproco_roots)
         print("MPD:", "{:.4f}".format(moproco_mpd) + "  ")
         print("Pairwise diffs:", ["{:.4f}".format(d) for d in moproco_diffs])
+        print()
+        print("### Black-box LLM generated code (M6.2)")
+        blackbox_roots = [casestudy + "/blackbox-llm/" + str(i) + "/src" for i in range(1, 6)]
+        blackbox_mpd, blackbox_diffs = compute_pairwise_diff(blackbox_roots)
+        print("MPD:", "{:.4f}".format(blackbox_mpd) + "  ")
+        print("Pairwise diffs:", ["{:.4f}".format(d) for d in blackbox_diffs])
         print()
