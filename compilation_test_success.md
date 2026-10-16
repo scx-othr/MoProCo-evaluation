@@ -10,9 +10,9 @@ retrieved from generated MoProCo code of each case study.
 | 4   | yes                    | 9/9              |
 | 5   | yes                    | 9/9              |
 
-**Compile success rate**: 0.8
+**Compile success rate (M1.1)**: 0.8
 
-**Test success rate**: 1.0
+**Test success rate (M1.2)**: 1.0
 
 ## library
 | run | successful compilation | successful tests |
@@ -23,9 +23,9 @@ retrieved from generated MoProCo code of each case study.
 | 4   | yes                    | 12/12            |
 | 5   | yes                    | 12/12            |
 
-**Compile success rate**: 1.0
+**Compile success rate (M1.1)**: 1.0
 
-**Test success rate**: 1.0
+**Test success rate (M1.2)**: 1.0
 
 ## shop
 | run | successful compilation | successful tests |
@@ -36,6 +36,6 @@ retrieved from generated MoProCo code of each case study.
 | 4   | yes                    | 16/18 (see [observations](shop/moproco/observations.md))           |
 | 5   | yes                    | 18/18            |
 
-**Compile success rate**: 1.0
+**Compile success rate (M1.1)**: 1.0
 
-**Test success rate**: 0.955
+**Test success rate (M1.2)**: 0.955
