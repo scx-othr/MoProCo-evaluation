@@ -1,8 +1,9 @@
 # MoProCo evaluation repository
 
-## Scope
+This repository contains case studies and raw evaluation data for *MoProCo*, a multi-paradigmatic approach and tool to combine model-driven software engineering, LLM-based software development, and coding. It accompanies the following journal article:
+- Felix Schwägerl and Thomas Buchmann: **Semi-formal modeling as foundation for hybrid model-driven and LLM-based code generation**, in: Software and Systems Modeling (2026). Online first. Springer. [DOI: 10.1007/s10270-026-01442-1](https://doi.org/10.1007/s10270-026-01442-1)
 
-This repository contains case studies and raw evaluation data for *MoProCo*, a multi-paradigmatic approach and tool to combine model-driven software engineering, LLM-based software development, and coding.
+## Scope
 
 MoProCo offers a unified textual syntax for UML-like class models. For operations and constructors, natural language specifications can be provided directly in the language. From MoProCo models, Java code is generated in a three-phase procedure:
 1. Template-based *deterministic* generation of structural code (with all relevant special cases such as bidirectional associations, composition semantics, etc.). Operations are mapped to method stuby with empty bodies.
@@ -10,8 +11,6 @@ MoProCo offers a unified textual syntax for UML-like class models. For operation
 3. Human evaluation of generated code, with the option to re-generate specific methods based on refined prompts and to *propagate back* generated code fragments into the model in order to locally remove non-determinism.
 
 The repository contains the artifacts, metric calculation scripts, and calculated metrics of the application of MoProCo to three different case studies. To allow for a detailed comparison of MoProCo to pure modeling, pure LLM-prompting and pure manual coding, suitable artifacts are provided for each case study. The presented metrics can be reproducibly derived from these artifacts.
-
-A journal publication utilizing the raw data contained here for the evaluation of the MoProCo approach is currently under review. It will be linked here once accepted.
 
 ## Optional dependencies
 
